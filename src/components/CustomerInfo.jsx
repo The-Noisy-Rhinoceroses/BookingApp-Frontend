@@ -27,13 +27,13 @@ export default class CustomerInfo extends Component {
   };
 
   handleSubmit = evt => {
-    const { appointmentDate } = this.state;
+    const { appointmentDate, firstName, lastName, email } = this.state;
     evt.preventDefault();
     axios
       .post('/api/customers', this.state)
       .then(res => res.data)
       .then(customerId =>
-        axios.post('/api/appointments', { customerId, appointmentDate })
+        axios.post('/api/appointments', { customerId, appointmentDate, firstName, lastName, email })
       )
       .catch(err => console.log(err));
   };
