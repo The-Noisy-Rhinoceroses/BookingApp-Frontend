@@ -7,7 +7,7 @@ const AllBarbers = props => {
       {props.allBarbers.map(barber => (
         <div key={barber._id}>
           <h1>{barber.firstName} {barber.lastName}</h1>
-          <img src={barber.imgUrl} alt={`${barber.firstName} ${barber.lastName}`}></img>
+          <img src={barber.imgUrl} alt={`${barber.firstName} ${barber.lastName}`} onClick={() => props.setBarber(barber._id)}  />
         </div>
       ))}
     </div>
