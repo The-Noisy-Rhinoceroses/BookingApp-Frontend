@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllBarbers } from '../store';
+import { fetchAllBarbers } from '../thunks';
 
 // Component;
 class AllBarbers extends Component {
