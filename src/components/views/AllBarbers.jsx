@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 const AllBarbers = props => {
   return (
     <div className="barber-grid">
