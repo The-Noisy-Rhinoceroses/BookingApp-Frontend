@@ -1,9 +1,16 @@
 /* ---------- Font Imports ---------- */
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 
 /* ---------- Global ---------- */
+body {
+    background: #f7f7f7;
+    font-family: 'Open Sans', sans-serif;
+}
 
+.text-center {
+    text-align: center;
+}
 
 
 /* ---------- Appointment Grid ---------- */
@@ -11,9 +18,37 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 40px;
 }
 
-.barber-grid-item {
-    
+.barber-grid > .barber-grid-item {
+    flex: calc(50% - 40px);
+    margin: 10px;
+    background: #fff;
 }
 
+.barber-grid > .barber-grid-item:hover {
+    cursor: pointer;
+}
+
+.barber-grid-item-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.barber-grid-item h1.barber-title {
+    position: absolute;
+    background: rgb(166, 29, 85);
+    color: #fff;
+    padding: 5px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.barber-grid-item-info img {
+    width: 70%;
+    margin: 0 auto;
+}
