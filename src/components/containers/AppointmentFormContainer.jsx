@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { CustomerInfoView } from '../views';
+import { AppointmentFormView } from '../views';
 import moment from 'moment';
 import axios from 'axios';
 
-class CustomerInfoContainer extends Component {
+class AppointmentFormContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -53,9 +53,10 @@ class CustomerInfoContainer extends Component {
   };
 
   render() {
+    
     return (
-      <CustomerInfoView
-        state={this.state}
+      <AppointmentFormView
+        customer={this.state}
         handleChange={this.handleChange}
         handleDate={this.handleDate}
         handleSubmit={this.handleSubmit}
@@ -72,4 +73,4 @@ const mapState = state => {
 };
 
 // Export by default our store-connected container component;
-export default connect(mapState, null)(CustomerInfoContainer);
+export default connect(mapState, null)(AppointmentFormContainer);

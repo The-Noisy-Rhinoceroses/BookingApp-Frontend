@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
-const CustomerInfoView = props => {
+const AppointmentFormView = props => {
+ 
   return (
     <div className="test-form">
       <form onSubmit={props.handleSubmit}>
@@ -65,16 +65,4 @@ const CustomerInfoView = props => {
   );
 };
 
-CustomerInfoView.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleDate: PropTypes.func.isRequired
-};
-
-// state: PropTypes.string,
-// state["lastName"]: PropTypes,
-// state["appointmentDate"]: PropTypes,
-// state["phoneNumber"]: PropTypes,
-// state["email"]: PropTypes,
-
-export default CustomerInfoView;
+export default AppointmentFormView;
