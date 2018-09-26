@@ -24,6 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Choose your Barbermon:</h1>
         <AllBarbersContainer
           openModal={this.onOpenModal}
         />
