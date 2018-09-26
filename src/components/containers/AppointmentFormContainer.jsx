@@ -53,10 +53,9 @@ class AppointmentFormContainer extends Component {
   };
 
   render() {
-    
     return (
       <AppointmentFormView
-        customer={this.state}
+        appointmentInfo={this.state}
         handleChange={this.handleChange}
         handleDate={this.handleDate}
         handleSubmit={this.handleSubmit}
@@ -73,4 +72,7 @@ const mapState = state => {
 };
 
 // Export by default our store-connected container component;
-export default connect(mapState, null)(AppointmentFormContainer);
+export default connect(
+  mapState,
+  null
+)(AppointmentFormContainer);

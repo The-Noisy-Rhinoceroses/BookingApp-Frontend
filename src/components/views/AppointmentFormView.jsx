@@ -4,47 +4,47 @@ import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
 const AppointmentFormView = props => {
- 
+  const{handleSubmit, handleDate, handleChange, appointmentInfo } = props
   return (
     <div className="test-form">
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>First Name:</label>
         <input
           type="text"
           name="firstName"
-          value={props.state.firstName}
-          onChange={props.handleChange}
+          value={appointmentInfo.firstName}
+          onChange={handleChange}
         />
         <br />
         <label>Last Name:</label>
         <input
           type="text"
           name="lastName"
-          value={props.state.lastName}
-          onChange={props.handleChange}
+          value={appointmentInfo.lastName}
+          onChange={handleChange}
         />
         <br />
         <label>Phone:</label>
         <input
           type="text"
           name="phoneNumber"
-          value={props.state.phoneNumber}
-          onChange={props.handleChange}
+          value={appointmentInfo.phoneNumber}
+          onChange={handleChange}
         />
         <br />
         <label>Email:</label>
         <input
           type="text"
           name="email"
-          value={props.state.email}
-          onChange={props.handleChange}
+          value={appointmentInfo.email}
+          onChange={handleChange}
         />
         <br />
         <label>Date:</label>
         <DatePicker
           todayButton={'Today'}
-          selected={props.state.appointmentDate}
-          onChange={props.handleDate}
+          selected={appointmentInfo.appointmentDate}
+          onChange={handleDate}
           showTimeSelect
           timeFormat="HH:mm"
           timeIntervals={30}
