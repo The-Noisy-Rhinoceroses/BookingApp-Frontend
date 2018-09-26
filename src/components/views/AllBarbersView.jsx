@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AllBarbersView = props => {
+  const { setBarber, openModal, allBarbers } = props;
   return (
     <div className="barber-grid">
-      {props.allBarbers.map(barber => (
+      {allBarbers.map(barber => (
         <div className="barber-grid-item" key={barber._id}>
-          <div className="barber-grid-item-info" onClick={() => props.setBarber(barber._id) && props.openModal()}>
+          <div className="barber-grid-item-info" onClick={() => setBarber(barber._id) && openModal()}>
             <h1 className="barber-title">{barber.firstName} {barber.lastName}</h1>
             <img src={barber.imgUrl} alt={`${barber.firstName} ${barber.lastName}`}  />
           </div>
@@ -22,7 +23,9 @@ AllBarbersView.propTypes = {
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired
-  })).isRequired
+  })).isRequired,
+  openModal: PropTypes.func.isRequired,
+  setBarber: PropTypes.func.isRequired
 };
 
 export default AllBarbersView;
