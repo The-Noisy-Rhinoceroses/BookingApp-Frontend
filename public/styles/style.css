@@ -25,10 +25,12 @@ body {
     flex: calc(50% - 40px);
     margin: 10px;
     background: #fff;
+    transition: .2s ease-in-out;
 }
 
 .barber-grid > .barber-grid-item:hover {
     cursor: pointer;
+    background: #e4e4e4;
 }
 
 .barber-grid-item-info {
