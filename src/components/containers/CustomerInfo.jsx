@@ -15,6 +15,7 @@ class CustomerInfoContainer extends Component {
       appointmentDate: moment()
     };
   }
+
   handleChange = evt => {
     this.setState({ [evt.target.name]: evt.target.value });
   };
@@ -26,23 +27,31 @@ class CustomerInfoContainer extends Component {
   };
 
   handleSubmit = evt => {
-    const { appointmentDate, firstName, lastName, email } = this.state;
     evt.preventDefault();
+
+    const { appointmentDate, firstName, lastName, email } = this.state;
+    const { barberId } = this.props.currentBarber._id;
+    const barberFirstName = this.props.currentBarber.firstName;
+    const barberLastName = this.props.currentBarber.lastName;
+
     axios
       .post('/api/customers', this.state)
       .then(res => res.data)
       .then(customerId =>
         axios.post('/api/appointments', {
-          customerId,
+          barberId,
           appointmentDate,
+          customerId,
+          email,
           firstName,
           lastName,
-          email,
-          barberId: this.props.currentBarber._id
+          barberFirstName,
+          barberLastName
         })
       )
       .catch(err => console.log(err));
   };
+
   render() {
     return (
       <CustomerInfo
@@ -63,7 +72,4 @@ const mapState = state => {
 };
 
 // Export by default our store-connected container component;
-export default connect(
-  mapState,
-  null
-)(CustomerInfoContainer);
+export default connect(mapState, null)(CustomerInfoContainer);

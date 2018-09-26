@@ -36,7 +36,4 @@ const mapDispatch = dispatch => {
 };
 
 // Export by default our store-connected container component;
-export default connect(
-  mapState,
-  mapDispatch
-)(AllBarbersContainer);
+export default connect(mapState, mapDispatch)(AllBarbersContainer);
