@@ -18,14 +18,14 @@ const AllBarbersView = props => {
 };
 
 AllBarbersView.propTypes = {
+  setBarber: PropTypes.func.isRequired,
+  openModal: PropTypes.func.isRequired,
   allBarbers: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.string.isRequired,
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired
-  })).isRequired,
-  openModal: PropTypes.func.isRequired,
-  setBarber: PropTypes.func.isRequired
+  })).isRequired
 };
 
 export default AllBarbersView;

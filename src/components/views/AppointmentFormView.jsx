@@ -79,10 +79,4 @@ AppointmentFormView.propTypes = {
   }).isRequired
 };
 
-// state: PropTypes.string,
-// state["lastName"]: PropTypes,
-// state["appointmentDate"]: PropTypes,
-// state["phoneNumber"]: PropTypes,
-// state["email"]: PropTypes,
-
 export default AppointmentFormView;
