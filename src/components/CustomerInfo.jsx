@@ -3,7 +3,6 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
-import Modal from 'react-responsive-modal';
 
 export default class CustomerInfo extends Component {
   constructor(props) {
@@ -14,7 +13,6 @@ export default class CustomerInfo extends Component {
       phoneNumber: '',
       email: '',
       appointmentDate: moment(),
-      modalOpen: false
     };
   }
 
@@ -38,15 +36,6 @@ export default class CustomerInfo extends Component {
         axios.post('/api/appointments', { customerId, appointmentDate, firstName, lastName, email })
       )
       .catch(err => console.log(err));
-  };
-
-  //following two functions for opening/closing modal on local state
-  onOpenModal = () => {
-    this.setState({ modalOpen: true });
-  };
-
-  onCloseModal = () => {
-    this.setState({ modalOpen: false });
   };
 
   render() {
@@ -104,10 +93,6 @@ export default class CustomerInfo extends Component {
             minDate={moment()}
             maxDate={moment().add(15, 'days')}
           />
-          <button onClick={this.onOpenModal}>Open modal</button>
-          <Modal open={this.state.modalOpen} onClose={this.onCloseModal} center>
-            <h2>Simple centered modal</h2>
-          </Modal>
           <button>Submit</button>
         </form>
       </div>

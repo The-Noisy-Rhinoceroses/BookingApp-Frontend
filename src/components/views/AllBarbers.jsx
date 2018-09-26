@@ -7,8 +7,10 @@ const AllBarbers = props => {
     <div className="barber-grid">
       {props.allBarbers.map(barber => (
         <div className="barber-grid-item" key={barber._id}>
-          <h1>{barber.firstName} {barber.lastName}</h1>
-          <img src={barber.imgUrl} alt={`${barber.firstName} ${barber.lastName}`} onClick={() => props.setBarber(barber._id)}  />
+          <div className="barber-grid-item-info" onClick={() => props.setBarber(barber._id) && props.openModal()}>
+            <h1>{barber.firstName} {barber.lastName}</h1>
+            <img src={barber.imgUrl} alt={`${barber.firstName} ${barber.lastName}`}  />
+          </div>
         </div>
       ))}
     </div>
