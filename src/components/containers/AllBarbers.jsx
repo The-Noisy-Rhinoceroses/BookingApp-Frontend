@@ -5,10 +5,6 @@ import AllBarbers from '../views/AllBarbers';
 
 // Container component;
 class AllBarbersContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.listAllBarbers();
   }

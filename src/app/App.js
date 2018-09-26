@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CustomerInfo, AllBarbersContainer } from '../components';
+import { CustomerInfoContainer, AllBarbersContainer } from '../components';
 import './App.css';
 import Modal from 'react-responsive-modal';
 
@@ -28,7 +28,7 @@ class App extends Component {
           openModal={this.onOpenModal}
         />
         <Modal open={this.state.modalOpen} onClose={this.onCloseModal} center>
-          <CustomerInfo />
+          <CustomerInfoContainer />
         </Modal>
       </div>
     );
