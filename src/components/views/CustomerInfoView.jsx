@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
-const CustomerInfo = props => {
+const CustomerInfoView = props => {
   return (
     <div className="test-form">
       <form onSubmit={props.handleSubmit}>
@@ -64,4 +64,4 @@ const CustomerInfo = props => {
   );
 };
 
-export default CustomerInfo;
+export default CustomerInfoView;

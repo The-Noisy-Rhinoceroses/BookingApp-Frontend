@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const AllBarbers = props => {
+const AllBarbersView = props => {
   return (
     <div className="barber-grid">
       {props.allBarbers.map(barber => (
@@ -17,8 +17,8 @@ const AllBarbers = props => {
   )
 };
 
-AllBarbers.propTypes = {
+AllBarbersView.propTypes = {
   allBarbers: PropTypes.array.isRequired
 };
 
-export default AllBarbers;
+export default AllBarbersView;

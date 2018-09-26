@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CustomerInfoContainer, AllBarbersContainer } from '../components';
+import { CustomerInfoContainer, AllBarbersContainer } from '../components/containers';
 import './App.css';
 import Modal from 'react-responsive-modal';
 

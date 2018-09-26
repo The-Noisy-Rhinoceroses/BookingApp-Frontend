@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CustomerInfo from '../views/CustomerInfo';
+import { CustomerInfoView } from '../views';
 import moment from 'moment';
 import axios from 'axios';
 
 class CustomerInfoContainer extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       firstName: '',
       lastName: '',
@@ -54,7 +54,7 @@ class CustomerInfoContainer extends Component {
 
   render() {
     return (
-      <CustomerInfo
+      <CustomerInfoView
         state={this.state}
         handleChange={this.handleChange}
         handleDate={this.handleDate}

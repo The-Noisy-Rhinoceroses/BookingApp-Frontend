@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllBarbers, fetchBarber } from '../../thunks';
-import AllBarbers from '../views/AllBarbers';
+import { AllBarbersView } from '../views';
 
 // Container component;
 class AllBarbersContainer extends Component {
@@ -11,7 +11,7 @@ class AllBarbersContainer extends Component {
 
   render() {
     return (
-      <AllBarbers
+      <AllBarbersView
         allBarbers={this.props.allBarbers}
         setBarber={this.props.setBarber}
         openModal={this.props.openModal}
