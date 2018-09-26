@@ -5,6 +5,9 @@ import AllBarbers from '../views/AllBarbers';
 
 // Container component;
 class AllBarbersContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
     this.props.listAllBarbers();
@@ -15,6 +18,7 @@ class AllBarbersContainer extends Component {
       <AllBarbers
         allBarbers={this.props.allBarbers}
         setBarber={this.props.setBarber}
+        openModal={this.props.openModal}
       />
     );
   }

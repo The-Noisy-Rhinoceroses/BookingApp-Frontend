@@ -24,11 +24,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <AllBarbersContainer />
+        <AllBarbersContainer
+          openModal={this.onOpenModal}
+        />
         <Modal open={this.state.modalOpen} onClose={this.onCloseModal} center>
           <CustomerInfo />
         </Modal>
-        <button onClick={this.onOpenModal}>Open Appointment Form</button>
       </div>
     );
   }
