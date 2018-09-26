@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 const AllBarbersView = props => {
   return (
     <div className="barber-grid">
@@ -18,7 +17,12 @@ const AllBarbersView = props => {
 };
 
 AllBarbersView.propTypes = {
-  allBarbers: PropTypes.array.isRequired
+  allBarbers: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string.isRequired
+  })).isRequired
 };
 
 export default AllBarbersView;
