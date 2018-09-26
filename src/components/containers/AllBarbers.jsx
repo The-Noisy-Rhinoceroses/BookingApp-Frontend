@@ -14,6 +14,7 @@ class AllBarbersContainer extends Component {
       <AllBarbers
         allBarbers={this.props.allBarbers}
         setBarber={this.props.setBarber}
+        openModal={this.props.openModal}
       />
     );
   }

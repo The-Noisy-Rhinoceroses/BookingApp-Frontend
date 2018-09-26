@@ -1,0 +1,19 @@
+/* ---------- Font Imports ---------- */
+
+
+
+/* ---------- Global ---------- */
+
+
+
+/* ---------- Appointment Grid ---------- */
+.barber-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.barber-grid-item {
+    
+}
+
