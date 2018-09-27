@@ -9,7 +9,7 @@ export const getBookedAppointments = bookedAppointments => ({
   payload: bookedAppointments
 });
 
-// HELPER FUNCTION
+// THUNKS
 export const fetchBookedAppointments = barberId => dispatch => {
     return axios
         .get(`/api/barbers/${barberId}/appointments`)
