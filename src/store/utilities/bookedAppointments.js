@@ -10,11 +10,13 @@ export const getBookedAppointments = bookedAppointments => ({
 });
 
 // HELPER FUNCTION
-export const fetchBookedAppointments = barberId => {
+export const fetchBookedAppointments = barberId => dispatch => {
     return axios
         .get(`/api/barbers/${barberId}/appointments`)
         .then(res => res.data)
-}
+        .then(foundBookedAppointments => dispatch(getBookedAppointments(foundBookedAppointments)))
+        .catch(console.log)
+};
 
 // REDUCER
 

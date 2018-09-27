@@ -1,6 +1,5 @@
 import axios from 'axios';
 import {
-  getBookedAppointments,
   fetchBookedAppointments
 } from './bookedAppointments';
 
@@ -22,11 +21,8 @@ export const fetchBarber = barberId => dispatch => {
     .then(res => res.data)
     .then(foundBarber => {
       dispatch(setCurrentBarber(foundBarber));
-      return foundBarber._id;
+      dispatch(fetchBookedAppointments(foundBarber._id))
     })
-    .then(fetchBookedAppointments)
-    .then(foundAppointments =>
-      dispatch(getBookedAppointments(foundAppointments)))
     .catch(console.log);
 };
 
