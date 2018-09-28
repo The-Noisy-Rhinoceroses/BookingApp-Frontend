@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppointmentFormContainer, AllBarbersContainer } from '../components/containers';
+import { AppointmentFormContainer, AllBarbersContainer } from '../components/containers/modules';
 import './App.css';
 import Modal from 'react-responsive-modal';
 
