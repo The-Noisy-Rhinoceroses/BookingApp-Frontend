@@ -4,7 +4,7 @@ import axios from 'axios'
 const GET_BOOKED_APPOINTMENTS = 'GET_BOOKED_APPOINTMENTS';
 
 // ACTION CREATORS
-export const getBookedAppointments = bookedAppointments => ({
+const getBookedAppointments = bookedAppointments => ({
   type: GET_BOOKED_APPOINTMENTS,
   payload: bookedAppointments
 });
