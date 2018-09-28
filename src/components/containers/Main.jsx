@@ -1,45 +1,40 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchAllBarbers, fetchBarber } from '../../thunks';
-import { AllBarbersView } from '../views';
+import { AppointmentFormContainer, AllBarbersContainer } from '../containers/modules';
+import Modal from 'react-responsive-modal';
 
 // Container component;
-class AllBarbersContainer extends Component {
-  componentDidMount() {
-    this.props.fetchAllBarbers();
+class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false
+    }
   }
 
+  //following two functions for opening/closing modal on local state
+  onOpenModal = () => {
+    this.setState({ modalOpen: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ modalOpen: false });
+  };
+
   render() {
+
     return (
-      <AllBarbersView
-        allBarbers={this.props.allBarbers}
-        setBarber={this.props.setBarber}
-        openModal={this.props.openModal}
-      />
+      <div className="section-main">
+        <h1>Choose your Barbermon:</h1>
+        <AllBarbersContainer
+          openModal={this.onOpenModal}
+        />
+        <Modal open={this.state.modalOpen} onClose={this.onCloseModal} center>
+          <AppointmentFormContainer />
+        </Modal>
+      </div>
     );
   }
 }
 
-// Map state to props;
-const mapState = state => {
-  return {
-    allBarbers: state.allBarbers
-  };
-};
-
-// Map dispatch to props;
-const mapDispatch = dispatch => {
-  return {
-    fetchAllBarbers: () => dispatch(fetchAllBarbers()),
-    setBarber: barberId => dispatch(fetchBarber(barberId))
-  };
-};
-
-// Type check incoming props from Redux store;
-AllBarbersContainer.propTypes = {
-  allBarbers: PropTypes.arrayOf(PropTypes.object).isRequired
-};
-
 // Export by default our store-connected container component;
-export default connect(mapState, mapDispatch)(AllBarbersContainer);
+export default Main;
