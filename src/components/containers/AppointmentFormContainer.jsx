@@ -26,6 +26,12 @@ class AppointmentFormContainer extends Component {
     });
   };
 
+  handleExcludeTimes = () => {
+    const { appointmentDate } = this.state;
+    const { bookedAppointments } = this.props;
+    return bookedAppointments.filter(bookedAppointment => appointmentDate.isSame(bookedAppointment, 'day'));
+  }
+
   handleSubmit = evt => {
     evt.preventDefault();
 
@@ -59,6 +65,7 @@ class AppointmentFormContainer extends Component {
         handleChange={this.handleChange}
         handleDate={this.handleDate}
         handleSubmit={this.handleSubmit}
+        handleExcludeTimes={this.handleExcludeTimes}
       />
     );
   }
@@ -67,7 +74,8 @@ class AppointmentFormContainer extends Component {
 // Map state to props;
 const mapState = state => {
   return {
-    currentBarber: state.currentBarber
+    currentBarber: state.currentBarber,
+    bookedAppointments: state.bookedAppointments.map(appointment => moment(appointment.date))
   };
 };
 
