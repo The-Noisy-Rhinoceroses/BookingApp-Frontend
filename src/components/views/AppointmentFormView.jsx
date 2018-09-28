@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
 const AppointmentFormView = props => {
-  const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo } = props;
+  const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates } = props;
   return (
     <div className="test-form">
       <form onSubmit={handleSubmit}>
@@ -60,6 +60,7 @@ const AppointmentFormView = props => {
           minDate={moment()}
           maxDate={moment().add(15, 'days')}
           excludeTimes={handleExcludeTimes()}
+          excludeDates={handleExcludeDates()}
         />
         <button>Submit</button>
       </form>
@@ -72,6 +73,7 @@ AppointmentFormView.propTypes = {
   handleDate: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleExcludeTimes: PropTypes.func.isRequired,
+  handleExcludeDates: PropTypes.func.isRequired,
   appointmentInfo: PropTypes.shape({
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
