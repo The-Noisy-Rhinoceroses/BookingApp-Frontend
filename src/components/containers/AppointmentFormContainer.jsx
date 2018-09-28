@@ -30,7 +30,7 @@ class AppointmentFormContainer extends Component {
     evt.preventDefault();
 
     const { appointmentDate, firstName, lastName, email } = this.state;
-    const { barberId } = this.props.currentBarber._id;
+    const barberId = this.props.currentBarber._id;
     const barberFirstName = this.props.currentBarber.firstName;
     const barberLastName = this.props.currentBarber.lastName;
 
