@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { AppointmentFormView } from '../views';
 import moment from 'moment';
@@ -77,6 +78,12 @@ const mapState = state => {
     currentBarber: state.currentBarber,
     bookedAppointments: state.bookedAppointments.map(appointment => moment(appointment.date))
   };
+};
+
+// Type check incoming props from Redux store;
+AppointmentFormContainer.propTypes = {
+  currentBarber: PropTypes.object.isRequired,
+  bookedAppointments: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 // Export by default our store-connected container component;
