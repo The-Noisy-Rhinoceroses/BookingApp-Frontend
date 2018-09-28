@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
-import PropTypes from 'prop-types';
 
 const AppointmentFormView = props => {
-  const { handleSubmit, handleDate, handleChange, appointmentInfo } = props;
+  const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo } = props;
   return (
     <div className="test-form">
       <form onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ const AppointmentFormView = props => {
         <br />
         <label>Date:</label>
         <DatePicker
-          todayButton={'Today'}
+          todayButton="Today"
           selected={appointmentInfo.appointmentDate}
           onChange={handleDate}
           showTimeSelect
@@ -59,6 +59,7 @@ const AppointmentFormView = props => {
             .minutes(0)}
           minDate={moment()}
           maxDate={moment().add(15, 'days')}
+          excludeTimes={handleExcludeTimes()}
         />
         <button>Submit</button>
       </form>
@@ -68,8 +69,9 @@ const AppointmentFormView = props => {
 
 AppointmentFormView.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired,
   handleDate: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleExcludeTimes: PropTypes.func.isRequired,
   appointmentInfo: PropTypes.shape({
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,

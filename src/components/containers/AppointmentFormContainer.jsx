@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { AppointmentFormView } from '../views';
 import moment from 'moment';
@@ -25,6 +26,12 @@ class AppointmentFormContainer extends Component {
       appointmentDate: date
     });
   };
+
+  handleExcludeTimes = () => {
+    const { appointmentDate } = this.state;
+    const { bookedAppointments } = this.props;
+    return bookedAppointments.filter(bookedAppointment => appointmentDate.isSame(bookedAppointment, 'day'));
+  }
 
   handleSubmit = evt => {
     evt.preventDefault();
@@ -59,6 +66,7 @@ class AppointmentFormContainer extends Component {
         handleChange={this.handleChange}
         handleDate={this.handleDate}
         handleSubmit={this.handleSubmit}
+        handleExcludeTimes={this.handleExcludeTimes}
       />
     );
   }
@@ -67,8 +75,15 @@ class AppointmentFormContainer extends Component {
 // Map state to props;
 const mapState = state => {
   return {
-    currentBarber: state.currentBarber
+    currentBarber: state.currentBarber,
+    bookedAppointments: state.bookedAppointments.map(appointment => moment(appointment.date))
   };
+};
+
+// Type check incoming props from Redux store;
+AppointmentFormContainer.propTypes = {
+  currentBarber: PropTypes.object.isRequired,
+  bookedAppointments: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 // Export by default our store-connected container component;

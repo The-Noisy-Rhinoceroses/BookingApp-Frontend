@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchAllBarbers, fetchBarber } from '../../thunks';
 import { AllBarbersView } from '../views';
@@ -6,7 +7,7 @@ import { AllBarbersView } from '../views';
 // Container component;
 class AllBarbersContainer extends Component {
   componentDidMount() {
-    this.props.listAllBarbers();
+    this.props.fetchAllBarbers();
   }
 
   render() {
@@ -30,9 +31,14 @@ const mapState = state => {
 // Map dispatch to props;
 const mapDispatch = dispatch => {
   return {
-    listAllBarbers: () => dispatch(fetchAllBarbers()),
+    fetchAllBarbers: () => dispatch(fetchAllBarbers()),
     setBarber: barberId => dispatch(fetchBarber(barberId))
   };
+};
+
+// Type check incoming props from Redux store;
+AllBarbersContainer.propTypes = {
+  allBarbers: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 // Export by default our store-connected container component;

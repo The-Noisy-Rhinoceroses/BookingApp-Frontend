@@ -1,4 +1,7 @@
 import axios from 'axios';
+import {
+  fetchBookedAppointments
+} from './bookedAppointments';
 
 // ACTION TYPES
 
@@ -12,21 +15,24 @@ const setCurrentBarber = currentBarber => ({
 
 // THUNKS
 
-export const fetchBarber = (barberId) => dispatch => {
-    return axios
-        .get(`/api/barbers/${barberId}`)
-        .then(res => res.data)
-        .then(foundBarber => dispatch(setCurrentBarber(foundBarber)))
-        .catch(console.log)
-}
+export const fetchBarber = barberId => dispatch => {
+  return axios
+    .get(`/api/barbers/${barberId}`)
+    .then(res => res.data)
+    .then(foundBarber => {
+      dispatch(setCurrentBarber(foundBarber));
+      dispatch(fetchBookedAppointments(foundBarber._id))
+    })
+    .catch(console.log);
+};
 
 // REDUCER
 
 export default (state = {}, action) => {
-    switch (action.type) {
-        case SET_CURRENT_BARBER:
-            return action.payload;
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+    case SET_CURRENT_BARBER:
+      return action.payload;
+    default:
+      return state;
+  }
+};
