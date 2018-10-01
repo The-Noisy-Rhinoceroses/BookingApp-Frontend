@@ -30,8 +30,29 @@ class AppointmentFormContainer extends Component {
   handleExcludeTimes = () => {
     const { appointmentDate } = this.state;
     const { bookedAppointments } = this.props;
-    return bookedAppointments.filter(bookedAppointment => appointmentDate.isSame(bookedAppointment, 'day'));
-  }
+    return bookedAppointments.filter(bookedAppointment =>
+      appointmentDate.isSame(bookedAppointment, 'day')
+    );
+  };
+
+  handleExcludeDates = () => {
+    let datesToExclude = [];
+
+    const frequencyObj = {};
+    const { bookedAppointments } = this.props;
+
+    for (let i = 0; i < bookedAppointments.length; i++) {
+      let appointment = bookedAppointments[i].format('MM DD YYYY');
+      frequencyObj[appointment] = frequencyObj[appointment] + 1 || 1;
+    }
+    for (let date in frequencyObj) {
+      let counter = frequencyObj[date];
+      // TODO: Strict check for 16 slots;
+      if (counter >= 16) datesToExclude.push(moment(date));
+    }
+
+    return datesToExclude;
+  };
 
   handleSubmit = evt => {
     evt.preventDefault();
@@ -67,6 +88,7 @@ class AppointmentFormContainer extends Component {
         handleDate={this.handleDate}
         handleSubmit={this.handleSubmit}
         handleExcludeTimes={this.handleExcludeTimes}
+        handleExcludeDates={this.handleExcludeDates}
       />
     );
   }
@@ -76,7 +98,9 @@ class AppointmentFormContainer extends Component {
 const mapState = state => {
   return {
     currentBarber: state.currentBarber,
-    bookedAppointments: state.bookedAppointments.map(appointment => moment(appointment.date))
+    bookedAppointments: state.bookedAppointments.map(appointment =>
+      moment(appointment.date)
+    )
   };
 };
 
