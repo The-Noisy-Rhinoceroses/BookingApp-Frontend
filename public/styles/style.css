@@ -16,8 +16,9 @@
 
 /* ---------- Global ---------- */
 body {
-    background: #f7f7f7;
+    background: #fff;
     font-family: 'TeachableSans-Regular', sans-serif;
+    font-size: 15px;
     letter-spacing: 0.7px;
     text-rendering: optimizeLegibility;
 }
@@ -41,6 +42,26 @@ body {
     flex: auto;
 }
 
+
+/* ---------- Buttons ---------- */
+.orange-button {
+    font-family: 'TeachableSans-Bold';
+    font-size: 14px;
+    border-radius: 100px;
+    padding: 20px 70px;
+    text-decoration: none !important;
+    cursor: pointer;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #ff7f45;
+    color: white;
+}
+
+.orange-button:hover {
+    background: #FF6D2C;
+}
+
+
 /* ---------- Titles ---------- */
 .header-name {
     font-family: 'Oswald', sans-serif;
@@ -63,6 +84,10 @@ body {
     line-height: 23px;
 }
 
+.header-title-medium {
+    font-size: 26px;
+    padding: 10px;
+}
 
 /* ---------- Header ---------- */
 .section-header {
@@ -103,6 +128,65 @@ body {
     max-width: 500px;
 }
 
+
+/* ---------- Switcher ---------- */
+.switcher-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: solid 2px #f1f1f1;
+    height: 80px;
+}
+
+.switcher-link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #5f5f5f;
+    cursor: pointer;
+    height: 100%;
+}
+
+.switcher-link > div {
+    transition: .3s ease-in-out;
+}
+
+.switcher-link:hover > div {
+    border-bottom: solid 3px #ff7f45;
+    color: #ff7f45;
+    margin-bottom: 1px;
+    padding-bottom: 30px;
+}
+
+.switcher-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.item-image {
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+}
+
+.item-image img {
+    margin: 0 auto;
+}
 
 /* ---------- Appointment Grid ---------- */
 .barber-grid {

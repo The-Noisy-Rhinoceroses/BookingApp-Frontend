@@ -1,18 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Switcher } from '../../widgets';
 
 const AllBarbersView = props => {
-  const { setBarber, openModal, allBarbers } = props;
+  const { setBarber, openModal, allBarbers, currentBarber } = props;
   return (
-    <div className="barber-grid">
-      {allBarbers.map(barber => (
-        <div className="barber-grid-item" key={barber._id}>
-          <div className="barber-grid-item-info" onClick={() => setBarber(barber._id) && openModal()}>
-            <h1 className="barber-title">{barber.firstName} {barber.lastName}</h1>
-            <img src={barber.imgUrl} alt={`${barber.firstName} ${barber.lastName}`}  />
-          </div>
-        </div>
-      ))}
+    <div className="all-barbers">
+      <Switcher items={allBarbers} activeItem={currentBarber} setItem={setBarber} openModal={openModal}/>
     </div>
   )
 };

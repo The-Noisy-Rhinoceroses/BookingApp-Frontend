@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FooterView } from '../views';
 
 // Container component;
 class Footer extends Component {
@@ -12,9 +13,7 @@ class Footer extends Component {
   render() {
 
     return (
-      <div className="section-footer section-shade-dark">
-        <div className="header-title text-center">This is the footer.</div>
-      </div>
+      <FooterView />
     );
   }
 }
