@@ -1,3 +1,4 @@
 // Barrel file for container components, which will be used to compose our main App component
-export { default as AllBarbersContainer } from './AllBarbersContainer';
-export { default as AppointmentFormContainer } from './AppointmentFormContainer';
+export { default as HeaderContainer } from './HeaderContainer';
+export { default as MainContainer } from './MainContainer';
+export { default as FooterContainer } from './FooterContainer';

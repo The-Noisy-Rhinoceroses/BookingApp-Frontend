@@ -1,17 +1,192 @@
 /* ---------- Font Imports ---------- */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700');
+
+@font-face {
+    font-family: "TeachableSans-Regular";
+    src: url("/fonts/TeachableSans-Regular.ttf") format("ttf"),
+}
+
+@font-face {
+    font-family: "TeachableSans-Bold";
+    src: url("/fonts/TeachableSans-Bold.ttf") format("ttf"),
+}
+
 
 /* ---------- Global ---------- */
 body {
-    background: #f7f7f7;
-    font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    font-family: 'TeachableSans-Regular', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.7px;
+    text-rendering: optimizeLegibility;
 }
 
 .text-center {
     text-align: center;
 }
 
+.section-shade-dark {
+    color: #fff;
+    background: #000;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.section-main {
+    flex: auto;
+}
+
+
+/* ---------- Buttons ---------- */
+.orange-button {
+    font-family: 'TeachableSans-Bold';
+    font-size: 14px;
+    border-radius: 100px;
+    padding: 20px 70px;
+    text-decoration: none !important;
+    cursor: pointer;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #ff7f45;
+    color: white;
+}
+
+.orange-button:hover {
+    background: #FF6D2C;
+}
+
+
+/* ---------- Titles ---------- */
+.header-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 57px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header-title {
+    font-size: 24px;
+    padding: 10px;
+    font-family: 'TeachableSans-Bold', sans-serif;
+    line-height: 39px;
+}
+
+.header-subtitle {
+    font-size: 15px;
+    padding: 10px;
+    font-family: 'TeachableSans-Regular', sans-serif;
+    line-height: 23px;
+}
+
+.header-title-medium {
+    font-size: 26px;
+    padding: 10px;
+}
+
+/* ---------- Header ---------- */
+.section-header {
+    background-image: url(../images/barberbg.jpg), linear-gradient(to right, #00f3ff, #ffa500);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    height: 60vh;
+    color: #fff;
+}
+
+.section-header-overlay {
+    height: 100%;
+    background: rgba(255, 241, 198, 0.2);
+}
+
+.section-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.section-header-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.section-header-title {
+    max-width: 700px;
+}
+
+.section-header-subtitle {
+    max-width: 500px;
+}
+
+
+/* ---------- Switcher ---------- */
+.switcher-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: solid 2px #f1f1f1;
+    height: 80px;
+}
+
+.switcher-link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #5f5f5f;
+    cursor: pointer;
+    height: 100%;
+}
+
+.switcher-link > div {
+    transition: .3s ease-in-out;
+}
+
+.switcher-link:hover > div {
+    border-bottom: solid 3px #ff7f45;
+    color: #ff7f45;
+    margin-bottom: 1px;
+    padding-bottom: 30px;
+}
+
+.switcher-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.item-image {
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+}
+
+.item-image img {
+    margin: 0 auto;
+}
 
 /* ---------- Appointment Grid ---------- */
 .barber-grid {

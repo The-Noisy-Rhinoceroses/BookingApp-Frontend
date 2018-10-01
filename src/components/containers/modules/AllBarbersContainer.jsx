@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchAllBarbers, fetchBarber } from '../../thunks';
-import { AllBarbersView } from '../views';
+import { fetchAllBarbers, fetchBarber } from '../../../thunks';
+import { AllBarbersView } from '../../views/modules';
 
 // Container component;
 class AllBarbersContainer extends Component {
+
   componentDidMount() {
     this.props.fetchAllBarbers();
   }
@@ -16,6 +17,7 @@ class AllBarbersContainer extends Component {
         allBarbers={this.props.allBarbers}
         setBarber={this.props.setBarber}
         openModal={this.props.openModal}
+        currentBarber={this.props.currentBarber}
       />
     );
   }
@@ -24,7 +26,8 @@ class AllBarbersContainer extends Component {
 // Map state to props;
 const mapState = state => {
   return {
-    allBarbers: state.allBarbers
+    allBarbers: state.allBarbers,
+    currentBarber: state.currentBarber
   };
 };
 
