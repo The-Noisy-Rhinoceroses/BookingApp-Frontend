@@ -12,8 +12,8 @@ class Footer extends Component {
   render() {
 
     return (
-      <div className="section-footer">
-        <div>This is the Footer.</div>
+      <div className="section-footer section-shade-dark">
+        <div className="header-title text-center">This is the footer.</div>
       </div>
     );
   }

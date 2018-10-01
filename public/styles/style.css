@@ -1,15 +1,106 @@
 /* ---------- Font Imports ---------- */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700');
+
+@font-face {
+    font-family: "TeachableSans-Regular";
+    src: url("/fonts/TeachableSans-Regular.ttf") format("ttf"),
+}
+
+@font-face {
+    font-family: "TeachableSans-Bold";
+    src: url("/fonts/TeachableSans-Bold.ttf") format("ttf"),
+}
+
 
 /* ---------- Global ---------- */
 body {
     background: #f7f7f7;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'TeachableSans-Regular', sans-serif;
+    letter-spacing: 0.7px;
+    text-rendering: optimizeLegibility;
 }
 
 .text-center {
     text-align: center;
+}
+
+.section-shade-dark {
+    color: #fff;
+    background: #000;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.section-main {
+    flex: auto;
+}
+
+/* ---------- Titles ---------- */
+.header-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 57px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header-title {
+    font-size: 24px;
+    padding: 10px;
+    font-family: 'TeachableSans-Bold', sans-serif;
+    line-height: 39px;
+}
+
+.header-subtitle {
+    font-size: 15px;
+    padding: 10px;
+    font-family: 'TeachableSans-Regular', sans-serif;
+    line-height: 23px;
+}
+
+
+/* ---------- Header ---------- */
+.section-header {
+    background-image: url(../images/barberbg.jpg), linear-gradient(to right, #00f3ff, #ffa500);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    height: 60vh;
+    color: #fff;
+}
+
+.section-header-overlay {
+    height: 100%;
+    background: rgba(255, 241, 198, 0.2);
+}
+
+.section-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.section-header-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.section-header-title {
+    max-width: 700px;
+}
+
+.section-header-subtitle {
+    max-width: 500px;
 }
 
 
