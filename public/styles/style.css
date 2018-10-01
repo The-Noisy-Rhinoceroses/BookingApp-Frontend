@@ -42,19 +42,50 @@ body {
     flex: auto;
 }
 
+input {
+    background-color: #f4f9fb;
+    border: 0;
+    box-shadow: 0px 1px 1px 0px #E6E9EC;
+    color: #555;
+    margin-bottom: 14px;
+    font-size: 14px;
+    height: 26px;
+    border-radius: 4px;
+}
+
+input:focus {
+    outline-offset: 0px;
+    outline: none;
+    transition: .3s ease-in-out;
+    background: #fff8e6;
+    box-shadow: 0px 1px 1px 0px #f9c4ad;
+    border: 0px;
+}
+
+label {
+    font-size: 13px;
+    padding: 10px 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
 
 /* ---------- Buttons ---------- */
 .orange-button {
-    font-family: 'TeachableSans-Bold';
+    font-family: 'TeachableSans-Bold', sans-serif;
     font-size: 14px;
     border-radius: 100px;
-    padding: 20px 70px;
+    padding: 20px 40px;
     text-decoration: none !important;
     cursor: pointer;
     outline: none !important;
     box-shadow: none !important;
     background-color: #ff7f45;
     color: white;
+    border: none;
+    font-weight: 800;
 }
 
 .orange-button:hover {
@@ -72,9 +103,28 @@ body {
 
 .header-title {
     font-size: 24px;
-    padding: 10px;
+    padding: 20px;
     font-family: 'TeachableSans-Bold', sans-serif;
     line-height: 39px;
+}
+
+.header-steps {
+    position: relative;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.active-step {
+    font-weight: 600;
+    color: #fff;
+}
+
+.header-steps > div {
+    margin-bottom: 20px;
 }
 
 .header-subtitle {
@@ -188,6 +238,7 @@ body {
     margin: 0 auto;
 }
 
+
 /* ---------- Appointment Grid ---------- */
 .barber-grid {
     display: flex;
@@ -227,5 +278,70 @@ body {
 
 .barber-grid-item-info img {
     width: 70%;
+    margin: 0 auto;
+}
+
+
+/* ---------- Appointment Form ---------- */
+.styles_modal__gNwvD {
+    padding: 0;
+    background: transparent;
+}
+
+.appointment-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.appointment-form-left {
+    position: relative;
+    background: #1EA69A;
+    color: #fff;
+    border-radius: 6px 0px 0px 6px;
+}
+
+.header-steps:before {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #fff;
+    content: "";
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+}
+
+.appointment-form-right {
+    background: #fff;
+    border-radius: 0px 6px 6px 0px;
+    color: #47505E;
+}
+
+.appointment-form-group-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0px 60px;
+}
+
+.appointment-button {
+    margin-top: 10px;
+}
+
+.appointment-form-right-main {
+    padding: 20px;
+}
+
+.appointment-form-right-bottom {
+    font-size: 10px;
+    border-top: 1px solid #EEE;
+    padding: 20px;
+}
+
+.appointment-form-right-bottom-description {
+    max-width: 200px;
     margin: 0 auto;
 }
