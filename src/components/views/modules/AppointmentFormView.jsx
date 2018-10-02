@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
 const AppointmentFormView = props => {
-  const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates } = props;
+  const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates, handleMinTime } = props;
   return (
     <div className="appointment-form text-center">
 
@@ -51,7 +51,7 @@ const AppointmentFormView = props => {
                 onChange={handleChange}
               />
             </div>
-            
+
             <div className="appointment-form-group-container">
               <label>Email</label>
               <input
@@ -73,18 +73,14 @@ const AppointmentFormView = props => {
                 timeIntervals={30}
                 dateFormat="LLL"
                 timeCaption="time"
-                minTime={moment()
-                  .hours(10)
-                  .minutes(0)}
-                maxTime={moment()
-                  .hours(18)
-                  .minutes(0)}
+                minTime={handleMinTime()}
+                maxTime={moment().hours(18).minutes(0)}
                 minDate={moment()}
                 maxDate={moment().add(15, 'days')}
                 excludeTimes={handleExcludeTimes()}
                 excludeDates={handleExcludeDates()}
               />
-              </div>
+            </div>
 
             <button className="appointment-button orange-button">Book</button>
 
@@ -93,7 +89,7 @@ const AppointmentFormView = props => {
 
         <div className="appointment-form-right-bottom">
             <div className="appointment-form-right-bottom-description">We are not responsible for loss of hair, bald spots, lack of enthusiasm, general nervousness. Pick your poison.</div>
-        </div>  
+        </div>
 
       </div>
     </div>
@@ -106,6 +102,7 @@ AppointmentFormView.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleExcludeTimes: PropTypes.func.isRequired,
   handleExcludeDates: PropTypes.func.isRequired,
+  handleMinTime: PropTypes.func.isRequired,
   appointmentInfo: PropTypes.shape({
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
