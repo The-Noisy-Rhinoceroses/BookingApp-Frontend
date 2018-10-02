@@ -7,63 +7,95 @@ import moment from 'moment';
 const AppointmentFormView = props => {
   const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates } = props;
   return (
-    <div className="test-form">
-      <form onSubmit={handleSubmit}>
-        <label>First Name:</label>
-        <input
-          type="text"
-          name="firstName"
-          value={appointmentInfo.firstName}
-          onChange={handleChange}
-        />
-        <br />
-        <label>Last Name:</label>
-        <input
-          type="text"
-          name="lastName"
-          value={appointmentInfo.lastName}
-          onChange={handleChange}
-        />
-        <br />
-        <label>Phone:</label>
-        <input
-          type="text"
-          name="phoneNumber"
-          value={appointmentInfo.phoneNumber}
-          onChange={handleChange}
-        />
-        <br />
-        <label>Email:</label>
-        <input
-          type="text"
-          name="email"
-          value={appointmentInfo.email}
-          onChange={handleChange}
-        />
-        <br />
-        <label>Date:</label>
-        <DatePicker
-          todayButton="Today"
-          selected={appointmentInfo.appointmentDate}
-          onChange={handleDate}
-          showTimeSelect
-          timeFormat="HH:mm"
-          timeIntervals={30}
-          dateFormat="LLL"
-          timeCaption="time"
-          minTime={moment()
-            .hours(10)
-            .minutes(0)}
-          maxTime={moment()
-            .hours(18)
-            .minutes(0)}
-          minDate={moment()}
-          maxDate={moment().add(15, 'days')}
-          excludeTimes={handleExcludeTimes()}
-          excludeDates={handleExcludeDates()}
-        />
-        <button>Submit</button>
-      </form>
+    <div className="appointment-form text-center">
+
+      <div className="appointment-form-left">
+        <div className="header-title">Book an Appointment</div>
+        <div className="header-steps">
+          <div className="step-1 active-step">Current step you're on</div>
+          <div className="step-2">Next step</div>
+          <div className="step-2">Next next step</div>
+        </div>
+      </div>
+
+      <div className="appointment-form-right">
+        <div className="appointment-form-right-main">
+          <form onSubmit={handleSubmit}>
+
+            <div className="appointment-form-group-container">
+              <label>First Name</label>
+              <input
+                type="text"
+                name="firstName"
+                value={appointmentInfo.firstName}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="appointment-form-group-container">
+              <label>Last Name</label>
+              <input
+                type="text"
+                name="lastName"
+                value={appointmentInfo.lastName}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="appointment-form-group-container">
+              <label>Phone</label>
+              <input
+                type="text"
+                name="phoneNumber"
+                value={appointmentInfo.phoneNumber}
+                onChange={handleChange}
+              />
+            </div>
+            
+            <div className="appointment-form-group-container">
+              <label>Email</label>
+              <input
+                type="text"
+                name="email"
+                value={appointmentInfo.email}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="appointment-form-group-container">
+              <label>Date</label>
+              <DatePicker
+                todayButton="Today"
+                selected={appointmentInfo.appointmentDate}
+                onChange={handleDate}
+                showTimeSelect
+                timeFormat="HH:mm"
+                timeIntervals={30}
+                dateFormat="LLL"
+                timeCaption="time"
+                minTime={moment()
+                  .hours(10)
+                  .minutes(0)}
+                maxTime={moment()
+                  .hours(18)
+                  .minutes(0)}
+                minDate={moment()}
+                maxDate={moment().add(15, 'days')}
+                excludeTimes={handleExcludeTimes()}
+                excludeDates={handleExcludeDates()}
+              />
+              </div>
+
+            <button className="appointment-button orange-button">Book</button>
+
+          </form>
+        </div>
+
+        <div className="appointment-form-right-bottom">
+            <div className="appointment-form-right-bottom-description">We are not responsible for loss of hair, bald spots, lack of enthusiasm, general nervousness. Pick your poison.</div>
+        </div>  
+
+      </div>
     </div>
   );
 };
