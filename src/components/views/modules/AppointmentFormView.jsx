@@ -29,6 +29,7 @@ const AppointmentFormView = props => {
                 name="firstName"
                 value={appointmentInfo.firstName}
                 onChange={handleChange}
+                required
               />
             </div>
 
@@ -39,26 +40,29 @@ const AppointmentFormView = props => {
                 name="lastName"
                 value={appointmentInfo.lastName}
                 onChange={handleChange}
+                required
               />
             </div>
 
             <div className="appointment-form-group-container">
               <label>Phone</label>
               <input
-                type="text"
+                type="tel"
                 name="phoneNumber"
                 value={appointmentInfo.phoneNumber}
                 onChange={handleChange}
+                required
               />
             </div>
 
             <div className="appointment-form-group-container">
               <label>Email</label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 value={appointmentInfo.email}
                 onChange={handleChange}
+                required
               />
             </div>
 
