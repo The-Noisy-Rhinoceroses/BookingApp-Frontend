@@ -73,29 +73,37 @@ class AppointmentFormContainer extends Component {
     return minTime;
   };
 
-  handleSubmit = evt => {
-    evt.preventDefault();
-
-    const { appointmentDate, firstName, lastName, email } = this.state;
-    const barberId = this.props.currentBarber._id;
-    const barberFirstName = this.props.currentBarber.firstName;
-    const barberLastName = this.props.currentBarber.lastName;
-
-    axios
+  sendCustomer = () => {
+    return axios
       .post('/api/customers', this.state)
       .then(res => res.data)
-      .then(customerId =>
-        axios.post('/api/appointments', {
-          barberId,
-          appointmentDate,
-          customerId,
-          email,
-          firstName,
-          lastName,
-          barberFirstName,
-          barberLastName
-        })
-      )
+      .catch(err => console.log(err));
+  };
+
+  sendAppointment = customerId => {
+    const barberId = this.props.currentBarber._id;
+    const { appointmentDate, email, firstName, lastName } = this.state;
+    const barberFirstName = this.props.currentBarber.firstName;
+    const barberLastName = this.props.currentBarber.lastName;
+    
+    axios
+    .post('/api/appointments', {
+      barberId,
+      appointmentDate,
+      customerId,
+      email,
+      firstName,
+      lastName,
+      barberFirstName,
+      barberLastName
+    })
+    .catch(err => console.log(err));
+  };
+  	  
+  handleSubmit = evt => {
+    evt.preventDefault();
+    this.sendCustomer()
+      .then(customerId => this.sendAppointment(customerId))
       .catch(err => console.log(err));
   };
 
