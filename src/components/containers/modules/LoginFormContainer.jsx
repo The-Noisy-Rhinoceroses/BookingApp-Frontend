@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import LoginFormView from '../../views/modules/LoginFormView';
-import axios from 'axios';
+import { setUser } from '../../../thunks';
 
 class LoginFormContainer extends Component {
   constructor() {
@@ -17,17 +18,27 @@ class LoginFormContainer extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    axios.post('/auth/login', this.state)
-      .then(res => res.data)
-      .then(user => console.log(user))
-      .catch(err => console.log(err));
+    this.props.setUser(this.state);
   };
 
   render() {
     return (
-      <LoginFormView loginInfo={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+      <LoginFormView
+        loginInfo={this.state}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+      />
     );
   }
 }
 
-export default LoginFormContainer;
+const mapDispatch = dispatch => {
+  return {
+    setUser: loginInfo => dispatch(setUser(loginInfo))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatch
+)(LoginFormContainer);

@@ -2,3 +2,4 @@
 export { default as allBarbers } from '../store/utilities/allBarbers';
 export { default as currentBarber } from '../store/utilities/currentBarber';
 export { default as bookedAppointments } from '../store/utilities/bookedAppointments';
+export { default as currentUser } from '../store/utilities/currentUser';
