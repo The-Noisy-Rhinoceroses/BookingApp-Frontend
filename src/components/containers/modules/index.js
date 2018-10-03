@@ -2,3 +2,4 @@
 export { default as AllBarbersContainer } from './AllBarbersContainer';
 export { default as AppointmentFormContainer } from './AppointmentFormContainer';
 export { default as LoginFormContainer } from './LoginFormContainer';
+export { default as BarberAppointmentsContainer } from './BarberAppointmentsContainer';
