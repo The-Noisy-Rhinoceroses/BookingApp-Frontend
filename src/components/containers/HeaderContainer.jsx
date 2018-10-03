@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { name } from '../../../package.json';
 import { HeaderView } from '../views';
+import { LoginFormContainer } from './modules';
 
 // Container component;
 class Header extends Component {
@@ -12,13 +13,15 @@ class Header extends Component {
   }
 
   render() {
-
     //Get App Name without '-' symbol.
     const dashIndex = name.indexOf('-');
     const appName = name.slice(0,dashIndex);
 
     return (
-      <HeaderView appName={appName} />
+      <div>
+        <LoginFormContainer />
+        <HeaderView appName={appName} />
+      </div>
     );
   }
 }
