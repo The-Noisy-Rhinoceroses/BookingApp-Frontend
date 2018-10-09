@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBookedAppointments } from '../../../thunks';
 import { BarberAppointmentsView } from '../../views/modules';
+import '../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css'
 
 class BarberAppointmentsContainer extends Component {
   componentDidMount() {
