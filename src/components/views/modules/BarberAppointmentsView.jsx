@@ -5,19 +5,12 @@ import BigCalendar, { momentLocalizer } from 'react-big-calendar';
 const BarberAppointmentsView = props => {
   const localizer = momentLocalizer(moment);
   const events = props.appointments.map(appointment => ({
-    title: 'Name of Customer',
-    start: moment(appointment.date),
-    end: moment(appointment.date).add(30, 'minutes')
+    title: `${appointment.customer.firstName} ${appointment.customer.lastName} - ${appointment.customer.phoneNumber}`,
+    start: new Date(appointment.date),
+    end: new Date(moment(appointment.date).add(30, 'minutes').format())
   }));
   return (
     <div style={{height: '100vh'}}>
-      {/*<div>
-      {props.appointments.map(appointment => (
-        <h1 key={appointment.date}>
-          {moment(appointment.date).format('MMMM Do YYYY, h:mm a')}
-        </h1>
-      ))}
-      </div>*/}
       <BigCalendar
         localizer={localizer}
         startAccessor="start"
