@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 const BarberAppointmentsView = props => {
+  console.log('APPOINTMENTS>>>', props.appointments);
   return (
     <div>
       {props.appointments.map(appointment => (

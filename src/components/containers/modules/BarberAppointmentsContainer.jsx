@@ -20,7 +20,10 @@ class BarberAppointmentsContainer extends Component {
 const mapState = state => {
   return {
     currentBarber: state.currentUser,
-    appointments: state.bookedAppointments
+    appointments: state.bookedAppointments.sort((a, b) => {
+      if (a.date === b.date) return 0;
+      return a.date > b.date ? 1 : -1; // sorts strings of dates in ascending order
+    })
   }
 }
 
