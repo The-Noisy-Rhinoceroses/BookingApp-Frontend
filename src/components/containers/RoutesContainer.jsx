@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, BrowserRouter, Switch } from 'react-router-dom';
+import { withRouter, Switch, Route } from 'react-router-dom';
 import { BarberAppointmentsContainer } from './modules';
 import { MainContainer } from './'
 import PropTypes from 'prop-types';
@@ -14,9 +14,8 @@ class RoutesContainer extends Component {
   render() {
     const { isLoggedIn } = this.props;
     return (
-      <BrowserRouter>
         <Switch>
-          <Route path="/home" component={MainContainer}></Route>
+          <Route path="/home" component={MainContainer} />
           {isLoggedIn && (
             <Switch>
               <Route
@@ -24,22 +23,22 @@ class RoutesContainer extends Component {
                 component={BarberAppointmentsContainer}
               />
             </Switch>
-          )}
+            )}
+            <Route component={MainContainer} />
         </Switch>
-      </BrowserRouter>
     );
   }
 }
 
 const mapState = state => {
   return {
-    isLoggedIn: !!state.currentUser
+    isLoggedIn: !!state.currentUser._id
   };
 };
 
 const mapDispatch = dispatch => {
   return {
-    loadUser: dispatch(me())
+    loadUser: () => dispatch(me())
   };
 };
 
@@ -52,5 +51,5 @@ export default withRouter(
   connect(
     mapState,
     mapDispatch
-  )(RouterContainer)
+  )(RoutesContainer)
 );

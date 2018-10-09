@@ -26,6 +26,14 @@ export const setUser = loginInfo => dispatch => {
     .catch(err => console.log(err));
 };
 
+export const me = () => dispatch => {
+  return axios
+    .get('/auth/me')
+    .then(res => res.data)
+    .then(user => dispatch(setCurrentUser(user)))
+    .catch(console.log);
+}
+
 //REDUCER
 
 export default (state = {}, action) => {
