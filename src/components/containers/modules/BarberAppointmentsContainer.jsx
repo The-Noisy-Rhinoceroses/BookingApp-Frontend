@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBookedAppointments } from '../../../thunks';
-import { BarberAppointmentsView } from '../../views/modules'
+import { BarberAppointmentsView } from '../../views/modules';
 
 class BarberAppointmentsContainer extends Component {
   componentDidMount() {
