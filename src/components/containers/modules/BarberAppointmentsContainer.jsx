@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchBookedAppointments } from '../../../thunks';
 import { BarberAppointmentsView } from '../../views/modules';
 
-
 class BarberAppointmentsContainer extends Component {
   componentDidMount() {
     this.props.listAppointments(this.props.currentBarber._id);
