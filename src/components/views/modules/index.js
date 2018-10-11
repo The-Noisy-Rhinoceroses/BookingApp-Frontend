@@ -2,3 +2,4 @@
 export { default as AllBarbersView } from './AllBarbersView';
 export { default as AppointmentFormView } from './AppointmentFormView';
 export { default as BarberAppointmentsView } from './BarberAppointmentsView';
+export { default as ServicesView } from './ServicesView';
