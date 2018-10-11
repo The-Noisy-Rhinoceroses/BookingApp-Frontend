@@ -5,13 +5,12 @@ import { FooterView } from '../views';
 class Footer extends Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
 
     };
   }
 
   render() {
-
     return (
       <FooterView />
     );
