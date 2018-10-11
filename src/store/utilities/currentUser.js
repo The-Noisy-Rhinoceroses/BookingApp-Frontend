@@ -54,7 +54,7 @@ export default (state = {}, action) => {
     case SET_USER:
       return action.payload;
     case REMOVE_USER:
-      return state;
+      return {};
     default:
       return state;
   }
