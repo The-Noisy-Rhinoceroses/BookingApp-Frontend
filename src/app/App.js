@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import {
   HeaderContainer,
   RoutesContainer,
@@ -12,9 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <HeaderContainer />
-        <BrowserRouter>
-          <RoutesContainer />
-        </BrowserRouter>
+        <RoutesContainer />
         <FooterContainer />
       </div>
     );

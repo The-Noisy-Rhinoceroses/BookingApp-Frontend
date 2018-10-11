@@ -20,9 +20,8 @@ class MainContainer extends Component {
   };
 
   render() {
-
     return (
-      <MainView openModal={this.onOpenModal} closeModal={this.onCloseModal} modalDisplay={this.state.modalDisplay}/>
+      <MainView openModal={this.onOpenModal} closeModal={this.onCloseModal} modalDisplay={this.state.modalDisplay} />
     );
   }
 }

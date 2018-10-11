@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { LoginFormView } from '../views'
 import { setUser } from '../../thunks';
+import { withRouter } from 'react-router-dom';
 
 class LoginFormContainer extends Component {
   constructor() {
@@ -19,6 +20,7 @@ class LoginFormContainer extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     this.props.setUser(this.state);
+    this.props.history.push('/dashboard')
   };
 
   render() {
@@ -38,7 +40,7 @@ const mapDispatch = dispatch => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   null,
   mapDispatch
-)(LoginFormContainer);
+)(LoginFormContainer));
