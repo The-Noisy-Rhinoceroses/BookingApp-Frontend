@@ -21,8 +21,16 @@ class Header extends Component {
     const { isLoggedIn } = this.props;
     return (
       <div>
-        {isLoggedIn ? <LogoutContainer /> : <LoginFormContainer />}
-        <HeaderView appName={appName} />
+        { isLoggedIn ?
+          <div className="header-user">
+            <LogoutContainer />
+          </div>
+        : 
+          <div className="header-guest">
+            <LoginFormContainer />
+            <HeaderView appName={appName} />
+          </div>
+        }
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { AppointmentFormContainer, AllBarbersContainer } from '../containers/modules';
 import Modal from 'react-responsive-modal';
 
-const MainView = props => {
+const LandingView = props => {
   const { openModal, closeModal, modalDisplay } = props;
   return (
     <div className="section-main">
@@ -16,4 +16,4 @@ const MainView = props => {
   )
 };
 
-export default MainView;
+export default LandingView;

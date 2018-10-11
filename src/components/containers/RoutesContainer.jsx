@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Switch, Route } from 'react-router-dom';
 import { BarberAppointmentsContainer } from './modules';
-import { MainContainer } from './'
+import { LandingContainer } from './';
 import PropTypes from 'prop-types';
 import { me } from '../../thunks';
 
@@ -15,16 +15,24 @@ class RoutesContainer extends Component {
     const { isLoggedIn } = this.props;
     return (
         <Switch>
-          <Route path="/home" component={MainContainer} />
+
+          {/* Global routes */}
+          <Route path="/home" component={LandingContainer} />
+
           {isLoggedIn && (
             <Switch>
+
+              {/* User routes */}
               <Route
                 path="/dashboard"
                 component={BarberAppointmentsContainer}
               />
             </Switch>
             )}
-            <Route component={MainContainer} />
+
+            {/* Initial landing component */}
+            <Route component={LandingContainer} />
+
         </Switch>
     );
   }

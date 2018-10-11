@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import RoutesContainer from './RoutesContainer';
+import { LandingView } from '../views';
 
 // Container component;
-class MainContainer extends Component {
+class LandingContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,10 +21,10 @@ class MainContainer extends Component {
 
   render() {
     return (
-      <RoutesContainer />
+      <LandingView openModal={this.onOpenModal} closeModal={this.onCloseModal} modalDisplay={this.state.modalDisplay} />
     );
   }
 }
 
 // Export by default our store-connected container component;
-export default MainContainer;
+export default LandingContainer;

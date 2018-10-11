@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   HeaderContainer,
-  RoutesContainer,
+  MainContainer,
   FooterContainer
 } from '../components/containers';
 import './App.css';
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <HeaderContainer />
-        <RoutesContainer />
+        <MainContainer />
         <FooterContainer />
       </div>
     );
