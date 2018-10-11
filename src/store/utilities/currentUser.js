@@ -3,12 +3,17 @@ import axios from 'axios';
 //ACTION TYPES
 
 const SET_USER = 'SET_USER';
+const REMOVE_USER = 'REMOVE_USER';
 
 //ACTION CREATOR
 
 const setCurrentUser = currentUser => ({
   type: SET_USER,
   payload: currentUser
+});
+
+const removeCurrentUser = () => ({
+  type: REMOVE_USER
 });
 
 //THUNKS
@@ -26,6 +31,14 @@ export const setUser = loginInfo => dispatch => {
     .catch(err => console.log(err));
 };
 
+export const logout = () => dispatch => {
+  return axios
+    .post('/auth/logout')
+    .then(res => res.data)
+    .then(() => dispatch(removeCurrentUser()))
+    .catch(err => console.log(err))
+};
+
 export const me = () => dispatch => {
   return axios
     .get('/auth/me')
@@ -40,6 +53,8 @@ export default (state = {}, action) => {
   switch (action.type) {
     case SET_USER:
       return action.payload;
+    case REMOVE_USER:
+      return {};
     default:
       return state;
   }

@@ -10,7 +10,7 @@ const LoginFormView = props => {
         <input type="text" name="email" value={email} onChange={handleChange} required></input>
       <label>Password:</label>
         <input type="password" name="password" value={password} onChange={handleChange} required></input>
-      <button>Submit</button>
+      <button>Login</button>
     </form>
   )
 };
