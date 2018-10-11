@@ -4,6 +4,7 @@ import { HeaderView } from '../views';
 import { LoginFormContainer, LogoutContainer } from './';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { ServicesContainer } from '../containers/modules';
 
 // Container component;
 class Header extends Component {
@@ -23,6 +24,7 @@ class Header extends Component {
       <div>
         {isLoggedIn ? <LogoutContainer /> : <LoginFormContainer />}
         <HeaderView appName={appName} />
+        {/* <ServicesContainer /> */}
       </div>
     );
   }
