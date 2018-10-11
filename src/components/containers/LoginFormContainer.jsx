@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LoginFormView from '../../views/modules/LoginFormView';
-import { setUser } from '../../../thunks';
+import { LoginFormView } from '../views'
+import { setUser } from '../../thunks';
 
 class LoginFormContainer extends Component {
   constructor() {
@@ -34,7 +34,7 @@ class LoginFormContainer extends Component {
 
 const mapDispatch = dispatch => {
   return {
-    setUser: loginInfo => dispatch(setUser(loginInfo))
+    setUser: (loginInfo) => dispatch(setUser(loginInfo))
   };
 };
 

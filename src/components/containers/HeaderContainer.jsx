@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { name } from '../../../package.json';
 import { HeaderView } from '../views';
-import { LoginFormContainer } from './modules';
+import { LoginFormContainer, LogoutContainer } from './';
 
 // Container component;
 class Header extends Component {
@@ -20,6 +20,7 @@ class Header extends Component {
     return (
       <div>
         <LoginFormContainer />
+        <LogoutContainer />
         <HeaderView appName={appName} />
       </div>
     );

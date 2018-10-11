@@ -2,3 +2,5 @@
 export { default as HeaderView } from './HeaderView';
 export { default as MainView } from './MainView';
 export { default as FooterView } from './FooterView';
+export { default as LoginFormView } from './LoginFormView';
+export { default as LogoutView } from './LogoutView';
