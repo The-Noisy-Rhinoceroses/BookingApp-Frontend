@@ -24,7 +24,7 @@ class Header extends Component {
       <div>
         {isLoggedIn ? <LogoutContainer /> : <LoginFormContainer />}
         <HeaderView appName={appName} />
-        <ServicesContainer />
+        {/* <ServicesContainer /> */}
       </div>
     );
   }
