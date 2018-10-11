@@ -19,7 +19,7 @@ class ServicesContainer extends Component {
   }
 
   render() {
-    <ServicesView services={this.state.services} />
+    return <ServicesView services={this.state.services} />
   }
 }
 

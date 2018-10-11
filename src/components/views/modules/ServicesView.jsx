@@ -8,9 +8,9 @@ const ServicesView = props => {
         <div key={service._id} >
           <input type="checkbox" name={service.serviceName} value={service.serviceName} />
           <label>{service.serviceName}</label>
-          <p>Duration: {service.duration}</p>
+          <p>Duration: {service.duration} minutes</p>
           <p>Description: {service.description}</p>
-          <p>Price: {service.price}</p>
+          <p>Price: ${service.price}.00</p>
         </div>
       ))}
     </div>
