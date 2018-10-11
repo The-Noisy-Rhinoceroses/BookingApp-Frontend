@@ -3,6 +3,7 @@ import { name } from '../../../package.json';
 import { HeaderView } from '../views';
 import { LoginFormContainer, LogoutContainer } from './';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Container component;
 class Header extends Component {
@@ -17,15 +18,21 @@ class Header extends Component {
     //Get App Name without '-' symbol.
     const dashIndex = name.indexOf('-');
     const appName = name.slice(0, dashIndex);
+    const { isLoggedIn } = this.props;
     return (
       <div>
-        <LoginFormContainer />
-        <LogoutContainer />
+        {isLoggedIn ? <LogoutContainer /> : <LoginFormContainer />}
         <HeaderView appName={appName} />
       </div>
     );
   }
 }
 
+const mapState = (state) => {
+  return {
+    isLoggedIn: !!state.currentUser._id
+  }
+};
+
 // Export by default our store-connected container component;
-export default withRouter(Header);
+export default withRouter(connect(mapState, null)(Header));
