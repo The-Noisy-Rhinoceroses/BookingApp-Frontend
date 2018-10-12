@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { AppointmentFormView } from '../../views/modules';
+import { AppointmentFormView } from '../../../../views/modules/Main';
 import moment from 'moment';
 import axios from 'axios';
 

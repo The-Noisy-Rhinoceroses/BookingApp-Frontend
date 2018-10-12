@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import BigCalendar, { momentLocalizer } from 'react-big-calendar';
-import '../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css'
-import Month from './calendar/Month';
+import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css'
+import { Month } from '../../../../widgets'
 
 const BarberAppointmentsView = props => {
   const localizer = momentLocalizer(moment);

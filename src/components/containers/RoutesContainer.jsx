@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Switch, Route } from 'react-router-dom';
-import { BarberAppointmentsContainer } from './modules';
-import { LandingContainer } from './';
 import PropTypes from 'prop-types';
 import { me } from '../../thunks';
+import RoutesView from '../views/RoutesView';
 
 class RoutesContainer extends Component {
   componentDidMount() {
@@ -14,26 +13,11 @@ class RoutesContainer extends Component {
   render() {
     const { isLoggedIn } = this.props;
     return (
-        <Switch>
-
-          {/* Global routes */}
-          <Route path="/home" component={LandingContainer} />
-
-          {isLoggedIn && (
-            <Switch>
-
-              {/* User routes */}
-              <Route
-                path="/dashboard"
-                component={BarberAppointmentsContainer}
-              />
-            </Switch>
-            )}
-
-            {/* Initial landing component */}
-            <Route component={LandingContainer} />
-
-        </Switch>
+        <RoutesView
+          isLoggedIn={isLoggedIn}
+          Switch={Switch}
+          Route={Route}
+        />
     );
   }
 }

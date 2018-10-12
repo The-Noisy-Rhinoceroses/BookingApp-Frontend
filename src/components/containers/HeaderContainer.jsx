@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { name } from '../../../package.json';
 import { HeaderView } from '../views';
-import { LoginFormContainer, LogoutContainer } from './';
+import { LoginFormContainer, LogoutContainer } from './modules/Header';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 

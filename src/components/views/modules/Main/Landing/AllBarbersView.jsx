@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Switcher } from '../../widgets';
+import { Switcher } from '../../../../widgets';
 
 const AllBarbersView = props => {
   const { setBarber, openModal, allBarbers, currentBarber } = props;
