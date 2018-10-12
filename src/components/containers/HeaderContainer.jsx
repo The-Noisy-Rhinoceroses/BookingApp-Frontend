@@ -20,7 +20,7 @@ class Header extends Component {
     const appName = name.slice(0, dashIndex);
     const { isLoggedIn } = this.props;
     return (
-      <div>
+      <div className="section-header">
         { isLoggedIn ?
           <div className="header-user">
             <LogoutContainer />

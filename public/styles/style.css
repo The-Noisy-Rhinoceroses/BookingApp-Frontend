@@ -140,7 +140,7 @@ a {
 }
 
 /* ---------- Header ---------- */
-.section-header {
+.section-header-landing {
     background-image: url(../images/barberbg.jpg), linear-gradient(to right, #00f3ff, #ffa500);
     background-repeat: no-repeat;
     background-size: cover;
