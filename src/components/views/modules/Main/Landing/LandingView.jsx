@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppointmentFormContainer, AllBarbersContainer } from '../containers/modules';
+import { AppointmentFormContainer, AllBarbersContainer } from '../../../../containers/modules';
 import Modal from 'react-responsive-modal';
 
 const LandingView = props => {

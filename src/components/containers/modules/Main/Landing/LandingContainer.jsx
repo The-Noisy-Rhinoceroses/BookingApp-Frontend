@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LandingView } from '../views';
+import { LandingView } from '../../../../views';
 
 // Container component;
 class LandingContainer extends Component {
