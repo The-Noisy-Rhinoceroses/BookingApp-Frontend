@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { me } from '../../thunks';
-import RoutesView from '../views/RoutesView';
+import { RoutesView } from '../views';
 
 class RoutesContainer extends Component {
   componentDidMount() {

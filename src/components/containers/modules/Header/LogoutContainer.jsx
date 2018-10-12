@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { LogoutView } from '../../../views';
+import { LogoutView } from '../../../views/modules/Header';
 import { logout } from '../../../../thunks';
 import { withRouter } from 'react-router-dom';
 

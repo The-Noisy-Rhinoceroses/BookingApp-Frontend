@@ -9,7 +9,7 @@ class BarberAppointmentsContainer extends Component {
   }
 
   render() {
-    console.log('I am here')
+
     return (
       <div>
         <BarberAppointmentsView appointments={this.props.appointments} />
