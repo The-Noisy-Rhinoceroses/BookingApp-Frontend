@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchBookedAppointments } from '../../../thunks';
-import { BarberAppointmentsView } from '../../views/modules';
+import { fetchBookedAppointments } from '../../../../../thunks';
+import { BarberAppointmentsView } from '../../../../views/modules/Main';
 
 class BarberAppointmentsContainer extends Component {
   componentDidMount() {
@@ -9,6 +9,7 @@ class BarberAppointmentsContainer extends Component {
   }
 
   render() {
+
     return (
       <div>
         <BarberAppointmentsView appointments={this.props.appointments} />

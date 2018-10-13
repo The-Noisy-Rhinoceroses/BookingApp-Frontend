@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Switch, Route } from 'react-router-dom';
-import { BarberAppointmentsContainer } from './modules';
-import { MainContainer } from './'
 import PropTypes from 'prop-types';
 import { me } from '../../thunks';
+import { RoutesView } from '../views';
 
 class RoutesContainer extends Component {
   componentDidMount() {
@@ -14,18 +13,11 @@ class RoutesContainer extends Component {
   render() {
     const { isLoggedIn } = this.props;
     return (
-        <Switch>
-          <Route path="/home" component={MainContainer} />
-          {isLoggedIn && (
-            <Switch>
-              <Route
-                path="/dashboard"
-                component={BarberAppointmentsContainer}
-              />
-            </Switch>
-            )}
-            <Route component={MainContainer} />
-        </Switch>
+        <RoutesView
+          isLoggedIn={isLoggedIn}
+          Switch={Switch}
+          Route={Route}
+        />
     );
   }
 }

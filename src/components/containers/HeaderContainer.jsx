@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { name } from '../../../package.json';
 import { HeaderView } from '../views';
-import { LoginFormContainer, LogoutContainer } from './';
+import { LoginFormContainer, LogoutContainer } from './modules/Header';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { ServicesContainer } from '../containers/modules';
 
 // Container component;
 class Header extends Component {
@@ -21,10 +20,17 @@ class Header extends Component {
     const appName = name.slice(0, dashIndex);
     const { isLoggedIn } = this.props;
     return (
-      <div>
-        {isLoggedIn ? <LogoutContainer /> : <LoginFormContainer />}
-        <HeaderView appName={appName} />
-        {/* <ServicesContainer /> */}
+      <div className="section-header">
+        { isLoggedIn ?
+          <div className="header-user">
+            <LogoutContainer />
+          </div>
+        : 
+          <div className="header-guest">
+            <LoginFormContainer />
+            <HeaderView appName={appName} />
+          </div>
+        }
       </div>
     );
   }

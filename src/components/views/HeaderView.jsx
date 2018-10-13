@@ -3,7 +3,7 @@ import React from 'react';
 const HeaderView = props => {
   const { appName } = props;
   return (
-    <div className="section-header">
+    <div className="section-header-landing">
         <div className="section-header-overlay">
           <div className="section-header-content text-center">
 

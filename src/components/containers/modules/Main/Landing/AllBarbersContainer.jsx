@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchAllBarbers, fetchBarber } from '../../../thunks';
-import { AllBarbersView } from '../../views/modules';
+import { fetchAllBarbers, fetchBarber } from '../../../../../thunks';
+import { AllBarbersView } from '../../../../views/modules/Main';
 
 // Container component;
 class AllBarbersContainer extends Component {

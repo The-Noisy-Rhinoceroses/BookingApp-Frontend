@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { LoginFormView } from '../views'
-import { setUser } from '../../thunks';
+import { LoginFormView } from '../../../views/modules/Header'
+import { setUser } from '../../../../thunks';
 import { withRouter } from 'react-router-dom';
 
 class LoginFormContainer extends Component {
