@@ -13,14 +13,14 @@ class ServicesContainer extends Component {
 
   handleChange = (evt) => {
     let service = evt.target.value;
-    if(this.state.selectedServices[evt.target.value]) {
-    const currentlySelectedServices = { ...this.state.selectedServices }
-    delete currentlySelectedServices[service];
-    this.setState({...this.state, selectedServices : currentlySelectedServices });
-    }else {
-      this.setState({...this.state, selectedServices : {...this.state.selectedServices, [service]:service }  })
+    if (this.state.selectedServices.hasOwnProperty(service)) {
+      const currentlySelectedServices = {...this.state.selectedServices};
+      delete currentlySelectedServices[service];
+      this.setState({ ...this.state, selectedServices: currentlySelectedServices });
     }
-    console.log("services",this.state.selectedServices);
+    else {
+      this.setState({ ...this.state, selectedServices: { ...this.state.selectedServices, [service]: service } })
+    }
   }
 
   componentDidMount() {
