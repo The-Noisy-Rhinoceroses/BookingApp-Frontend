@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { ServicesView } from '../../views/modules/'
+import ServicesView  from '../../views/modules/ServicesView';
 
 class ServicesContainer extends Component {
   constructor() {
     super();
     this.state = {
-      services: []
+      services: [],
+      selectedServices : {},
     }
+  }
+
+  handleChange = (evt) => {
+    let service = evt.target.value;
+    if(this.state.selectedServices[evt.target.value]) {
+    const currentlySelectedServices = { ...this.state.selectedServices }
+    delete currentlySelectedServices[service];
+    this.setState({...this.state, selectedServices : currentlySelectedServices });
+    }else {
+      this.setState({...this.state, selectedServices : {...this.state.selectedServices, [service]:service }  })
+    }
+    console.log("services",this.state.selectedServices);
   }
 
   componentDidMount() {
@@ -19,7 +32,7 @@ class ServicesContainer extends Component {
   }
 
   render() {
-    return <ServicesView services={this.state.services} />
+    return <ServicesView services={this.state.services} handleChange={this.handleChange}/>
   }
 }
 
