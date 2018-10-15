@@ -16,10 +16,10 @@ class ServicesContainer extends Component {
     if (this.state.selectedServices.hasOwnProperty(service)) {
       const currentlySelectedServices = {...this.state.selectedServices};
       delete currentlySelectedServices[service];
-      this.setState({ ...this.state, selectedServices: currentlySelectedServices });
+      this.setState({selectedServices: currentlySelectedServices});
     }
     else {
-      this.setState({ ...this.state, selectedServices: { ...this.state.selectedServices, [service]: service } })
+      this.setState({selectedServices: {...this.state.selectedServices, [service]: service}})
     }
   }
 
