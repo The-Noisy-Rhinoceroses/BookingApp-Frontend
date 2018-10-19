@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ServicesView = props => {
-  const { services } = props;
+  const { services, handleSubmit } = props;
   return (
     <div>
       {services.map(service => (
@@ -13,6 +13,7 @@ const ServicesView = props => {
           <p>Price: ${service.price}.00</p>
         </div>
       ))}
+      <button onClick={handleSubmit}>Confirm Service</button>
     </div>
   );
 };
