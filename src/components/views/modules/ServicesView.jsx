@@ -6,7 +6,7 @@ const ServicesView = props => {
     <div>
       {services.map(service => (
         <div key={service._id} >
-          <input onChange={props.handleChange} type="checkbox" name={service.serviceName} value={service.serviceName} defaultChecked={false} />
+          <input onChange={props.handleChange} type="checkbox" name={service.serviceName} value={JSON.stringify(service)} defaultChecked={false} />
           <label>{service.serviceName}</label>
           <p>Duration: {service.duration} minutes</p>
           <p>Description: {service.description}</p>

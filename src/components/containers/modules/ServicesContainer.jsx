@@ -7,32 +7,33 @@ class ServicesContainer extends Component {
     super();
     this.state = {
       services: [],
-      selectedServices : {},
+      selectedServices: {},
     }
   }
 
   handleChange = (evt) => {
-    let service = evt.target.value;
-    if (this.state.selectedServices.hasOwnProperty(service)) {
+    let service = JSON.parse(evt.target.value);
+    if (this.state.selectedServices.hasOwnProperty(service.serviceName)) {
       const currentlySelectedServices = {...this.state.selectedServices};
-      delete currentlySelectedServices[service];
+      delete currentlySelectedServices[service.serviceName];
       this.setState({selectedServices: currentlySelectedServices});
     }
     else {
-      this.setState({selectedServices: {...this.state.selectedServices, [service]: service}})
+      this.setState({selectedServices: {...this.state.selectedServices, [service.serviceName]: service}})
     }
   }
 
   componentDidMount() {
     axios
-      .get("/api/services")
+      .get('/api/services')
       .then(res => res.data)
       .then(services => this.setState({services}))
       .catch(err => console.log(err))
   }
 
   render() {
-    return <ServicesView services={this.state.services} handleChange={this.handleChange}/>
+    console.log(this.state);
+    return <ServicesView services={this.state.services} handleChange={this.handleChange} />
   }
 }
 
