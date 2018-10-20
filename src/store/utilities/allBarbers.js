@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { fetchBarber } from './currentBarber';
+import { fetchBarber } from '../../thunks';
+
 // ACTION TYPES
 const GET_ALL_BARBERS = 'GET_ALL_BARBERS';
 
