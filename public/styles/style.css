@@ -335,6 +335,11 @@ a {
     padding: 20px;
 }
 
+.services-view {
+    max-width: 186px;
+    margin: 0 auto;
+}
+
 .appointment-form-right-bottom {
     font-size: 10px;
     border-top: 1px solid #EEE;

@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ServicesView = props => {
-  const { services, handleSubmit } = props;
+  const { services, handleSubmit, handleNextIndex } = props;
   return (
-    <div>
+    <div className="services-view">
       {services.map(service => (
         <div key={service._id} >
           <input onChange={props.handleChange} type="checkbox" name={service.serviceName} value={JSON.stringify(service)} defaultChecked={false} />
@@ -13,7 +13,10 @@ const ServicesView = props => {
           <p>Price: ${service.price}.00</p>
         </div>
       ))}
-      <button onClick={handleSubmit}>Confirm Service</button>
+      <button onClick={() => {
+        handleSubmit()
+        handleNextIndex()
+         }}>Confirm Service</button>
     </div>
   );
 };

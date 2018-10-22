@@ -11,8 +11,9 @@ export { default as BarberAppointmentsContainer } from './Dashboard/BarberAppoin
 
 // #region --------------- Landing Exports --------------- 
 export { default as AllBarbersContainer } from './Landing/AllBarbersContainer';
-export { default as AppointmentFormContainer } from './Landing/AppointmentFormContainer';
+export { AppointmentFormContainer } from './Landing/AppointmentForm';
 export { default as LandingContainer } from './Landing/LandingContainer';
-export { default as ServicesContainer } from './Landing/ServicesContainer';
+export { ServicesContainer } from './Landing/AppointmentForm';
+export { CustomerInfoContainer } from './Landing/AppointmentForm';
 
 // #endregion

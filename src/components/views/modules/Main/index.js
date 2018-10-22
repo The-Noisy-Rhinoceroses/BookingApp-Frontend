@@ -11,8 +11,9 @@ export { default as BarberAppointmentsView } from './Dashboard/BarberAppointment
 
 // #region --------------- Landing Exports --------------- 
 export { default as AllBarbersView } from './Landing/AllBarbersView';
-export { default as AppointmentFormView } from './Landing/AppointmentFormView';
+export { AppointmentFormView } from './Landing/AppointmentForm';
 export { default as LandingView } from './Landing/LandingView';
-export { default as ServicesView } from './Landing/ServicesView';
+export { ServicesView } from './Landing/AppointmentForm';
+export { CustomerInfoView } from './Landing/AppointmentForm';
 
 // #endregion
