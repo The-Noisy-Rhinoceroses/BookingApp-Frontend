@@ -1,6 +1,5 @@
 import React from 'react';
-import { BarberAppointmentsContainer } from '../containers/modules/Main';
-import { LandingContainer } from '../containers/modules/Main';
+import { DashboardContainer, LandingContainer } from '../containers/modules/Main';
 
 const RoutesView = props => {
     const {Route, Switch, isLoggedIn} = props;
@@ -17,7 +16,7 @@ const RoutesView = props => {
                     {/* User routes */}
                     <Route
                         path="/dashboard"
-                        component={BarberAppointmentsContainer}
+                        component={DashboardContainer}
                     />
                 </Switch>
             )}

@@ -4,7 +4,7 @@ import BigCalendar, { momentLocalizer } from 'react-big-calendar';
 import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import { Month } from '../../../../widgets';
 
-const BarberAppointmentsView = props => {
+const WeeklyView = props => {
   const localizer = momentLocalizer(moment);
 
   const events = props.appointments.map(appointment => ({
@@ -19,9 +19,16 @@ const BarberAppointmentsView = props => {
     }
   }
 
+  // Testing for custom calendar view render
+  
+  // const myView = {
+  //   title: (date, {formats, culture}) => { return ''},
+  //   navigate: (date, action) => { return new Date()}
+  // }
+
   return (
-      <div style={{height: '100vh'}}>
-        <div>Monthly View</div>
+      <div>
+        <div>Weekly View</div>
         <BigCalendar
           localizer={localizer}
           startAccessor="start"
@@ -35,4 +42,4 @@ const BarberAppointmentsView = props => {
   );
 };
 
-export default BarberAppointmentsView;
+export default WeeklyView;
