@@ -19,14 +19,14 @@ const AppointmentFormView = props => {
       <div className="appointment-form-right">
         <div className="appointment-form-right-main">
         {wizardIndex === 0 && (
-          <ServicesContainer 
+          <ServicesContainer
             handleNextIndex={handleNextIndex}
           />
         )}
 
         {wizardIndex === 1 && (
-          <CustomerInfoContainer 
-          handleSumbit={handleSubmit}
+          <CustomerInfoContainer
+          handleSubmit={handleSubmit}
           handleDate={handleDate}
           handleChange={handleChange}
           handleExcludeTimes={handleExcludeTimes}
