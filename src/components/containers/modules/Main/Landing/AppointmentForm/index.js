@@ -2,3 +2,4 @@
 
 export { default as ServicesContainer } from './ServicesContainer';
 export { default as AppointmentFormContainer } from './AppointmentFormContainer';
+export { default as CustomerInfoContainer } from './CustomerInfoContainer';

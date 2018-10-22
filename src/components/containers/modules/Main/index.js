@@ -14,5 +14,6 @@ export { default as AllBarbersContainer } from './Landing/AllBarbersContainer';
 export { AppointmentFormContainer } from './Landing/AppointmentForm';
 export { default as LandingContainer } from './Landing/LandingContainer';
 export { ServicesContainer } from './Landing/AppointmentForm';
+export { CustomerInfoContainer } from './Landing/AppointmentForm';
 
 // #endregion
