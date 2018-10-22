@@ -14,10 +14,7 @@ const RoutesView = props => {
                 <Switch>
 
                     {/* User routes */}
-                    <Route
-                        path="/dashboard"
-                        component={DashboardContainer}
-                    />
+                    <Route path="/dashboard" component={DashboardContainer} />
                     <Route component={DashboardContainer} />
                 </Switch>
             )}
