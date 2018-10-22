@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
+import { ServicesContainer } from '../../.././../containers/modules/Main';
 
 const AppointmentFormView = props => {
   const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates, handleMinTime } = props;
@@ -15,6 +16,7 @@ const AppointmentFormView = props => {
           <div className="step-1 active-step">Current step you're on</div>
           <div className="step-2">Next step</div>
           <div className="step-2">Next next step</div>
+          <ServicesContainer />
         </div>
       </div>
 
