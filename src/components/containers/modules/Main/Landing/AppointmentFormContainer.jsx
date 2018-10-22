@@ -30,7 +30,8 @@ class AppointmentFormContainer extends Component {
   handleExcludeTimes = () => {
     const { appointmentDate } = this.state;
     const { bookedAppointments } = this.props;
-    return bookedAppointments.filter(bookedAppointment => appointmentDate.isSame(bookedAppointment, 'day'));
+    return bookedAppointments.filter(bookedAppointment =>
+      appointmentDate.isSame(bookedAppointment, 'day'));
   };
 
   handleExcludeDates = () => {
@@ -54,13 +55,15 @@ class AppointmentFormContainer extends Component {
 
   handleMinTime = () => {
     const { appointmentDate } = this.state;
-    const selectedDay = appointmentDate.format("MM-DD-YYYY");
-    const today = moment().format("MM-DD-YYYY");
-    let minTime = moment().hours(10).minutes(0);
+    const selectedDay = appointmentDate.format('MM-DD-YYYY');
+    const today = moment().format('MM-DD-YYYY');
+    let minTime = moment()
+      .hours(10)
+      .minutes(0);
 
     if (selectedDay === today) {
       const currentTime = moment();
-      const difference = currentTime.diff(minTime, "hours");
+      const difference = currentTime.diff(minTime, 'hours');
       if (difference > 0) minTime = currentTime;
       // NOTE: It should not be acceptable for a past time slot to be an available option;
       // NOTE: If a user views the time slots after the store has opened, then that currentTime will be set as the minimum time;
@@ -85,21 +88,23 @@ class AppointmentFormContainer extends Component {
     const { appointmentDate, email, firstName, lastName } = this.state;
     const barberFirstName = this.props.currentBarber.firstName;
     const barberLastName = this.props.currentBarber.lastName;
-    
+    const { selectedServices } = this.props;
+
     axios
-    .post('/api/appointments', {
-      barberId,
-      appointmentDate,
-      customerId,
-      email,
-      firstName,
-      lastName,
-      barberFirstName,
-      barberLastName
-    })
-    .catch(err => console.log(err));
+      .post('/api/appointments', {
+        barberId,
+        appointmentDate,
+        customerId,
+        email,
+        firstName,
+        lastName,
+        barberFirstName,
+        barberLastName,
+        selectedServices
+      })
+      .catch(err => console.log(err));
   };
-  	  
+
   handleSubmit = evt => {
     evt.preventDefault();
     this.sendCustomer()
@@ -127,8 +132,8 @@ const mapState = state => {
   return {
     currentBarber: state.currentBarber,
     bookedAppointments: state.bookedAppointments.map(appointment =>
-      moment(appointment.date)
-    )
+      moment(appointment.date)),
+    selectedServices: state.selectedServices
   };
 };
 
