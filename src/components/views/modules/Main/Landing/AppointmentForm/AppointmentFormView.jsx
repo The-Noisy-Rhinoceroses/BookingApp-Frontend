@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
-import  { ServicesContainer } from '../../../../containers/modules/Main';
+import  { ServicesContainer } from '../../../../../containers/modules/Main';
 
 const AppointmentFormView = props => {
   const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates, handleMinTime } = props;
