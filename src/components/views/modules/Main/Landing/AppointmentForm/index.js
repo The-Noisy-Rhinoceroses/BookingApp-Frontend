@@ -2,3 +2,4 @@
 
 export { default as ServicesView } from './ServicesView';
 export { default as AppointmentFormView } from './AppointmentFormView';
+export { default as CustomerInfoView } from './CustomerInfoView';

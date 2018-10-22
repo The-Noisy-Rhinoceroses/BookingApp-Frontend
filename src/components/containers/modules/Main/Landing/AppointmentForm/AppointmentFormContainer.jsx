@@ -13,8 +13,27 @@ class AppointmentFormContainer extends Component {
       lastName: '',
       phoneNumber: '',
       email: '',
-      appointmentDate: moment()
+      appointmentDate: moment(),
+      wizardIndex: 0
     };
+  }
+
+  handleNextIndex = () => {
+    const oldIndex = this.state.wizardIndex;
+    const wizardIndex = oldIndex + 1;
+
+    this.setState({
+      wizardIndex
+    })
+  }
+
+  handlePrevIndex = () => {
+    const oldIndex = this.state.wizardIndex;
+    const wizardIndex = oldIndex - 1;
+    
+    this.setState({
+      wizardIndex
+    })
   }
 
   handleChange = evt => {
@@ -122,6 +141,9 @@ class AppointmentFormContainer extends Component {
         handleExcludeTimes={this.handleExcludeTimes}
         handleExcludeDates={this.handleExcludeDates}
         handleMinTime={this.handleMinTime}
+        handleNextIndex={this.handleNextIndex}
+        handlePrevIndex={this.handlePrevIndex}
+        wizardIndex={this.state.wizardIndex}
       />
     );
   }

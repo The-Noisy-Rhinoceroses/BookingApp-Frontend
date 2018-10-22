@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import  { ServicesContainer, CustomerInfoContainer } from '../../../../../containers/modules/Main';
 
 const AppointmentFormView = props => {
-  const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates, handleMinTime } = props;
+  const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates, handleMinTime, handleNextIndex, handlePrevIndex, wizardIndex } = props;
   return (
     <div className="appointment-form text-center">
 
@@ -18,16 +18,24 @@ const AppointmentFormView = props => {
 
       <div className="appointment-form-right">
         <div className="appointment-form-right-main">
-        <ServicesContainer />
-        <CustomerInfoContainer 
-            handleSumbit={handleSubmit}
-            handleDate={handleDate}
-            handleChange={handleChange}
-            handleExcludeTimes={handleExcludeTimes}
-            appointmentInfo={appointmentInfo}
-            handleExcludeDates={handleExcludeDates}
-            handleMinTime={handleMinTime}
+        {wizardIndex === 0 && (
+          <ServicesContainer 
+            handleNextIndex={handleNextIndex}
           />
+        )}
+
+        {wizardIndex === 1 && (
+          <CustomerInfoContainer 
+          handleSumbit={handleSubmit}
+          handleDate={handleDate}
+          handleChange={handleChange}
+          handleExcludeTimes={handleExcludeTimes}
+          appointmentInfo={appointmentInfo}
+          handleExcludeDates={handleExcludeDates}
+          handleMinTime={handleMinTime}
+          handlePrevIndex={handlePrevIndex}
+        />
+        )}
         </div>
 
         <div className="appointment-form-right-bottom">

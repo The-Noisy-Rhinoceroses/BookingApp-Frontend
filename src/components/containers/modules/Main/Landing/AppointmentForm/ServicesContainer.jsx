@@ -47,6 +47,7 @@ class ServicesContainer extends Component {
         services={this.state.services}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
+        handleNextIndex={this.props.handleNextIndex}
       />
     );
   }
