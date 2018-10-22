@@ -13,7 +13,10 @@ const ServicesView = props => {
           <p>Price: ${service.price}.00</p>
         </div>
       ))}
-      <button onClick={handleSubmit && handleNextIndex}>Confirm Service</button>
+      <button onClick={() => {
+        handleSubmit()
+        handleNextIndex()
+         }}>Confirm Service</button>
     </div>
   );
 };
