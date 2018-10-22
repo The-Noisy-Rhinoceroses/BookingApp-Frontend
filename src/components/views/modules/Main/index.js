@@ -13,6 +13,6 @@ export { default as BarberAppointmentsView } from './Dashboard/BarberAppointment
 export { default as AllBarbersView } from './Landing/AllBarbersView';
 export { default as AppointmentFormView } from './Landing/AppointmentFormView';
 export { default as LandingView } from './Landing/LandingView';
-export { default as ServicesView } from './Landing/ServicesView';
+export { ServicesView } from './Landing/AppointmentForm';
 
 // #endregion

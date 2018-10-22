@@ -3,7 +3,7 @@ import React from 'react';
 const ServicesView = props => {
   const { services, handleSubmit } = props;
   return (
-    <div>
+    <div className="services-view">
       {services.map(service => (
         <div key={service._id} >
           <input onChange={props.handleChange} type="checkbox" name={service.serviceName} value={JSON.stringify(service)} defaultChecked={false} />

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { mountSelectedServices } from '../../../../../store/utilities/selectedServices';
-import { ServicesView } from '../../../../views/modules/Main';
+import { mountSelectedServices } from '../../../../../../store/utilities/selectedServices';
+import { ServicesView } from '../../../../../views/modules/Main';
 
 class ServicesContainer extends Component {
   constructor() {

@@ -13,6 +13,6 @@ export { default as BarberAppointmentsContainer } from './Dashboard/BarberAppoin
 export { default as AllBarbersContainer } from './Landing/AllBarbersContainer';
 export { default as AppointmentFormContainer } from './Landing/AppointmentFormContainer';
 export { default as LandingContainer } from './Landing/LandingContainer';
-export { default as ServicesContainer } from './Landing/ServicesContainer';
+export { ServicesContainer } from './Landing/AppointmentForm';
 
 // #endregion
