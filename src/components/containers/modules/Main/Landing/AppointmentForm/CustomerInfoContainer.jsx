@@ -6,7 +6,7 @@ const CustomerInfoContainer = props => {
     const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates, handleMinTime } = props;
     return (
         <CustomerInfoView
-            handleSumbit={handleSubmit}
+            handleSubmit={handleSubmit}
             handleDate={handleDate}
             handleChange={handleChange}
             handleExcludeTimes={handleExcludeTimes}
