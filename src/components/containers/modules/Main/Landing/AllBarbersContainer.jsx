@@ -7,8 +7,9 @@ import { AllBarbersView } from '../../../../views/modules/Main';
 // Container component;
 class AllBarbersContainer extends Component {
 
-  componentDidMount() {
-    this.props.fetchAllBarbers();
+  async componentDidMount() {
+    const currentBarber = await this.props.fetchAllBarbers();
+    await this.props.setBarber(currentBarber._id)
   }
 
   render() {

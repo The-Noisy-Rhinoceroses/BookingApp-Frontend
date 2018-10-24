@@ -17,9 +17,9 @@ export const fetchAllBarbers = () => dispatch => {
     .then(res => res.data)
     .then(barbers => {
       dispatch(getAllBarbers(barbers))
-      dispatch(fetchBarber(barbers[0]._id));
+      // dispatch(fetchBarber(barbers[0]._id));
+      return barbers[0]
     })
-    .catch(console.log);
 };
 
 // REDUCER

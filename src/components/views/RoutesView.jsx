@@ -8,19 +8,20 @@ const RoutesView = props => {
         <Switch>
 
             {/* Global routes */}
-            <Route path="/home" component={LandingContainer} />
+            <Route exact path="/home" component={LandingContainer} />
 
             {isLoggedIn && (
                 <Switch>
 
                     {/* User routes */}
-                    <Route path="/dashboard" component={DashboardContainer} />
+                    <Route exact path="/dashboard" component={DashboardContainer} />
                     <Route component={DashboardContainer} />
                 </Switch>
             )}
 
             {/* Initial landing component */}
             <Route component={LandingContainer} />
+
 
         </Switch>
     )
