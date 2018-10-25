@@ -10,8 +10,12 @@ class DashboardContainer extends Component {
 
   render() {
     return (
-      <DashboardView appointments={this.props.appointments} />
-    )
+      <DashboardView
+        appointments={this.props.appointments}
+        handleChange={this.handleChange}
+        allBarbers={this.props.allBarbers}
+      />
+    );
   }
 }
 
@@ -22,13 +26,16 @@ const mapState = state => {
       if (a.date === b.date) return 0;
       return a.date > b.date ? 1 : -1; // sorts strings of dates in ascending order
     })
-  }
-}
+  };
+};
 
 const mapDispatch = dispatch => {
   return {
-    listAppointments: (barberId) => dispatch(fetchBookedAppointments(barberId))
-  }
-}
+    listAppointments: barberId => dispatch(fetchBookedAppointments(barberId))
+  };
+};
 
-export default connect(mapState, mapDispatch)(DashboardContainer);
+export default connect(
+  mapState,
+  mapDispatch
+)(DashboardContainer);

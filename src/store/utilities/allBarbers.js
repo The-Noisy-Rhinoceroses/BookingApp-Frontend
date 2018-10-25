@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { fetchBarber } from '../../thunks';
 
 // ACTION TYPES
 const GET_ALL_BARBERS = 'GET_ALL_BARBERS';
@@ -17,7 +16,6 @@ export const fetchAllBarbers = () => dispatch => {
     .then(res => res.data)
     .then(barbers => {
       dispatch(getAllBarbers(barbers))
-      // dispatch(fetchBarber(barbers[0]._id));
       return barbers[0]
     })
 };
