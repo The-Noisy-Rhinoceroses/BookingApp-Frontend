@@ -1,5 +1,5 @@
 import React from 'react';
-import { DashboardContainer, LandingContainer } from '../containers/modules/Main';
+import { DashboardContainer, LandingContainer, ReviewFormContainer } from '../containers/modules/Main';
 
 const RoutesView = props => {
     const {Route, Switch, isLoggedIn} = props;
@@ -9,7 +9,7 @@ const RoutesView = props => {
 
             {/* Global routes */}
             <Route exact path="/home" component={LandingContainer} />
-
+            <Route exact path="/:barberId/:customerId/review" component={ReviewFormContainer} />
             {isLoggedIn && (
                 <Switch>
 
