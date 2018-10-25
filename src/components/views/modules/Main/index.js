@@ -15,6 +15,6 @@ export { AppointmentFormView } from './Landing/AppointmentForm';
 export { default as LandingView } from './Landing/LandingView';
 export { ServicesView } from './Landing/AppointmentForm';
 export { CustomerInfoView } from './Landing/AppointmentForm';
-export { ReviewFormView } from './Landing/ReviewFormView';
+export { default as ReviewFormView } from './Landing/ReviewFormView';
 
 // #endregion
