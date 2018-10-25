@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchBookedAppointments } from '../../../../../thunks';
+import { fetchCoworkerAppointments } from '../../../../../thunks';
 import { DashboardMenuView } from '../../../../views/modules/Main';
 
 class DashboardMenuContainer extends Component {
   handleChange = (evt) => {
-    this.props.fetchBookedAppointments(evt.target.value);
+    this.props.fetchCoworkerAppointments(evt.target.value);
   }
 
   render() {
     return (
-      <DashboardMenuView allBarbers={this.props.allBarbers} handleChange={this.handleChange} currentUser={this.props.currentUser}/>
+      <DashboardMenuView allBarbers={this.props.allBarbers} handleChange={this.handleChange} currentUser={this.props.currentUser} />
     )
   }
 }
@@ -24,7 +24,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    fetchBookedAppointments: (barberId) => dispatch(fetchBookedAppointments(barberId))
+    fetchCoworkerAppointments: (barberId) => dispatch(fetchCoworkerAppointments(barberId))
   }
 }
 

@@ -5,9 +5,9 @@ const DashboardMenuView = props => {
   return (
     <div className="dashboard-menu">
       This is the Dashboard Menu.
-      <select name="selectedBarber" onChange={handleChange}>
+      <select name="selectedBarber" onChange={handleChange} value={currentUser._id}>
         {allBarbers.map(barber => (
-          <option selected={currentUser._id === barber._id} value={barber._id}>{barber.firstName} {barber.lastName}</option>
+          <option key={barber._id} value={barber._id}>{barber.firstName} {barber.lastName}</option>
         ))}
       </select>
     </div>

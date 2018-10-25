@@ -3,3 +3,4 @@ export * from '../store/utilities/allBarbers';
 export * from '../store/utilities/currentBarber';
 export * from '../store/utilities/bookedAppointments';
 export * from '../store/utilities/currentUser';
+export * from '../store/utilities/coworkerAppointments';

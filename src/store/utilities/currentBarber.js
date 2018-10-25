@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { fetchBookedAppointments } from '../../thunks';
 
 // ACTION TYPES
 
@@ -18,6 +19,7 @@ export const fetchBarber = barberId => dispatch => {
     .then(res => res.data)
     .then(foundBarber => {
       dispatch(setCurrentBarber(foundBarber));
+      dispatch(fetchBookedAppointments(foundBarber._id))
     })
     .catch(console.log);
 };
