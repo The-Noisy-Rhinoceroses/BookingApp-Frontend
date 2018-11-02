@@ -158,6 +158,10 @@ label {
 
 
 /* #region --------- Titles --------- */
+.mini-title {
+    font-size: 10px;
+}
+
 .header-name-title {
     font-family: 'Oswald', sans-serif;
     font-size: 57px;
@@ -203,8 +207,13 @@ label {
 }
 
 .palette-two {
-    color: #000;
+    color: #47505E;
     background: #fff;
+}
+
+.palette-three {
+    color: #fff;
+    background: #1EA69A;
 }
 
 .bottom-grey {
@@ -297,23 +306,18 @@ label {
 /* #endregion --------- Switcher --------- */
 
 
-/* ---------- Appointment Form ---------- */
+/* #region --------- Appointment Form --------- */
 .styles_modal__gNwvD {
     padding: 0;
     background: transparent;
 }
 
 .appointment-form {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
 .appointment-form-left {
     position: relative;
-    background: #1EA69A;
-    color: #fff;
     border-radius: 6px 0px 0px 6px;
 }
 
@@ -326,7 +330,7 @@ label {
     margin-bottom: 20px;
 }
 
-.header-steps:before {
+.active-step-title:before {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-right: 10px solid #fff;
@@ -337,40 +341,37 @@ label {
 }
 
 .appointment-form-right {
-    background: #fff;
     border-radius: 0px 6px 6px 0px;
-    color: #47505E;
 }
 
 .appointment-form-group-container {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap;
     padding: 0px 60px;
 }
 
-.appointment-button {
-    margin-top: 10px;
-}
-
-.appointment-form-right-main {
-    padding: 20px;
-}
-
+/* VVV ----- CONTINUE STYLING APPOINTMENT FORM SERVICES HERE */
 .services-view {
     max-width: 186px;
     margin: 0 auto;
 }
 
 .appointment-form-right-bottom {
-    font-size: 10px;
     border-top: 1px solid #EEE;
-    padding: 20px;
 }
 
 .appointment-form-right-bottom-description {
     max-width: 200px;
-    margin: 0 auto;
 }
+
+
+/* #endregion --------- Appointment Form --------- */
+
+
+/* #region --------- Dashboard --------- */
+
+
+
+/* #endregion --------- Dashboard --------- */
+
+
