@@ -1,4 +1,4 @@
-/* ---------- Font Imports ---------- */
+/* #region --------- Fonts --------- */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700');
@@ -14,32 +14,81 @@
 }
 
 
-/* ---------- Global ---------- */
+/* #endregion ------ Fonts --------- */
+
+
+/* #region --------- Global --------- */
 body {
     background: #fff;
+    color: #000;
     font-family: 'TeachableSans-Regular', sans-serif;
     font-size: 15px;
     letter-spacing: 0.7px;
     text-rendering: optimizeLegibility;
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #a0a0a0;
+}
+
 .text-center {
     text-align: center;
 }
 
-.section-shade-dark {
-    color: #fff;
-    background: #000;
+.element-center {
+    margin: 0 auto;
 }
 
-.App {
+.narrow-content {
+    max-width: 700px;
+}
+
+.narrow-content-smaller {
+    max-width: 500px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-column {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    flex-wrap: wrap;
 }
 
-.section-main {
-    flex: auto;
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-full-grid > * {
+    flex: 1;
+}
+
+.menu-items > * {
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+
+.overlay-parent {
+    position: relative;
+}
+
+.overlay-element {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 input {
@@ -67,12 +116,97 @@ label {
     padding: 10px 0px;
 }
 
-a {
-    text-decoration: none;
+
+/* #endregion ------ Global --------- */
+
+
+/* #region ------ Spacing --------- */
+.mini-padding {
+    padding: 10px;
+}
+
+.small-padding {
+    padding: 20px;
+}
+
+.medium-padding {
+    padding: 30px 40px;
+}
+
+.large-padding {
+    padding: 60px 40px;
+}
+
+.mini-margin {
+    margin: 5px 0;
+}
+
+.small-margin {
+    margin: 10px 0;
+}
+
+.medium-margin {
+    margin: 30px 0;
+}
+
+.large-margin {
+    margin: 60px 0;
 }
 
 
-/* ---------- Buttons ---------- */
+/* #endregion ------ Spacing --------- */
+
+
+/* #region --------- Titles --------- */
+.header-name-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 57px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header-title {
+    font-size: 24px;
+    font-family: 'TeachableSans-Bold', sans-serif;
+    line-height: 39px;
+}
+
+.header-step-title {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+}
+
+.active-step-title {
+    font-weight: 600;
+    color: #fff;
+}
+
+.header-subtitle {
+    font-size: 15px;
+    font-family: 'TeachableSans-Regular', sans-serif;
+    line-height: 23px;
+}
+
+
+/* #endregion ------ Titles --------- */
+
+
+/* #region --------- Palettes --------- */
+.palette-one {
+    color: #fff;
+    background: #000;
+}
+
+.palette-two {
+    color: #000;
+    background: #fff;
+}
+
+
+/* #endregion ------ Palettes --------- */
+
+
+/* #region --------- Buttons --------- */
 .orange-button {
     font-family: 'TeachableSans-Bold', sans-serif;
     font-size: 14px;
@@ -92,54 +226,14 @@ a {
     background: #FF6D2C;
 }
 
+/* #endregion --------- Buttons --------- */
 
-/* ---------- Titles ---------- */
-.header-name {
-    font-family: 'Oswald', sans-serif;
-    font-size: 57px;
-    text-transform: uppercase;
-    font-weight: 700;
+
+/* #region --------- Header --------- */
+.section-main {
+    flex: auto;
 }
 
-.header-title {
-    font-size: 24px;
-    padding: 20px;
-    font-family: 'TeachableSans-Bold', sans-serif;
-    line-height: 39px;
-}
-
-.header-steps {
-    position: relative;
-    padding: 20px;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.active-step {
-    font-weight: 600;
-    color: #fff;
-}
-
-.header-steps > div {
-    margin-bottom: 20px;
-}
-
-.header-subtitle {
-    font-size: 15px;
-    padding: 10px;
-    font-family: 'TeachableSans-Regular', sans-serif;
-    line-height: 23px;
-}
-
-.header-title-medium {
-    font-size: 26px;
-    padding: 10px;
-}
-
-/* ---------- Header ---------- */
 .section-header-landing {
     background-image: url(../images/barberbg.jpg), linear-gradient(to right, #00f3ff, #ffa500);
     background-repeat: no-repeat;
@@ -155,28 +249,11 @@ a {
 }
 
 .section-header-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100%;
 }
 
-.section-header-description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 20px;
-}
 
-.section-header-title {
-    max-width: 700px;
-}
-
-.section-header-subtitle {
-    max-width: 500px;
-}
+/* #endregion --------- Header --------- */
 
 
 /* ---------- Switcher ---------- */
@@ -300,6 +377,15 @@ a {
     background: #1EA69A;
     color: #fff;
     border-radius: 6px 0px 0px 6px;
+}
+
+.header-steps {
+    position: relative;
+    align-items: flex-end;
+}
+
+.header-steps > div {
+    margin-bottom: 20px;
 }
 
 .header-steps:before {

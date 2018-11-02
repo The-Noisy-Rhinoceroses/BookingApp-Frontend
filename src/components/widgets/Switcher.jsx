@@ -24,8 +24,8 @@ class Switcher extends Component {
                 { currentItem &&
                     <div className="switcher-content">
                         <div className="item-info">
-                            <div className="header-title-medium">{currentItem.firstName} {currentItem.lastName}</div>
-                            <div className="item-description header-subtitle">
+                            <div className="header-title small-padding-medium">{currentItem.firstName} {currentItem.lastName}</div>
+                            <div className="item-description header-subtitle mini-padding">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada orci ex, sit amet facilisis mauris luctus et. Mauris cursus ornare tristique. Proin id mi sit amet mi faucibus faucibus non quis neque. Duis sed ante eu odio ornare elementum. Pellentesque et sem sodales, sollicitudin sem sed, suscipit felis. Aenean et lacus nulla. Nullam elementum porttitor lobortis.
                             </div>
                             <div className="item-image">

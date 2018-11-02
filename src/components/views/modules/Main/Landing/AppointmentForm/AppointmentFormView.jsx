@@ -8,11 +8,11 @@ const AppointmentFormView = props => {
     <div className="appointment-form text-center">
 
       <div className="appointment-form-left">
-        <div className="header-title">Book an Appointment</div>
-        <div className="header-steps">
-          <div className="step-1 active-step">Current step you're on</div>
-          <div className="step-2">Next step</div>
-          <div className="step-2">Next next step</div>
+        <div className="header-title small-padding">Book an Appointment</div>
+        <div className="header-steps small-padding flex-column">
+          <div className="step-1 header-step-title active-step-title">Current step you're on</div>
+          <div className="step-2 header-step-title">Next step</div>
+          <div className="step-2 header-step-title">Next next step</div>
         </div>
       </div>
 
