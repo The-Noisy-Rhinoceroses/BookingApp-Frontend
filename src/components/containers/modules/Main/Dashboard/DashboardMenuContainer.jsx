@@ -4,13 +4,20 @@ import { fetchCoworkerAppointments } from '../../../../../thunks';
 import { DashboardMenuView } from '../../../../views/modules/Main';
 
 class DashboardMenuContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedId: this.props.currentUser._id
+    }
+  }
   handleChange = (evt) => {
+    this.setState({selectedId: evt.target.value})
     this.props.fetchCoworkerAppointments(evt.target.value);
   }
 
   render() {
     return (
-      <DashboardMenuView allBarbers={this.props.allBarbers} handleChange={this.handleChange} currentUser={this.props.currentUser} />
+      <DashboardMenuView allBarbers={this.props.allBarbers} handleChange={this.handleChange} selectedUser={this.state.selectedId} currentUser={this.props.currentUser} />
     )
   }
 }
