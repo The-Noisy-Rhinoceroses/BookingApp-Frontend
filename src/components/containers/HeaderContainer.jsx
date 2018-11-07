@@ -4,6 +4,7 @@ import { HeaderView } from '../views';
 import { LoginFormContainer, LogoutContainer } from './modules/Header';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import axios from 'axios'
 
 // Container component;
 class Header extends Component {
@@ -25,9 +26,21 @@ class Header extends Component {
           <div className="header-user">
             <LogoutContainer />
           </div>
-        : 
+        :
           <div className="header-guest">
             <LoginFormContainer />
+            <button
+              onClick={() => {
+                axios
+                  .post('/api/services/pay', { amount: '2' })
+                  .then(res => res.data)
+                  .then(location => {
+                    window.location = location;
+                  });
+              }}
+            >
+              WATCH THIS
+            </button>
             <HeaderView appName={appName} />
           </div>
         }
