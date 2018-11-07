@@ -5,19 +5,19 @@ import  { ServicesContainer, CustomerInfoContainer } from '../../../../../contai
 const AppointmentFormView = props => {
   const { handleSubmit, handleDate, handleChange, handleExcludeTimes, appointmentInfo, handleExcludeDates, handleMinTime, handleNextIndex, handlePrevIndex, wizardIndex } = props;
   return (
-    <div className="appointment-form text-center">
+    <div className="appointment-form flex-row text-center">
 
-      <div className="appointment-form-left">
-        <div className="header-title">Book an Appointment</div>
-        <div className="header-steps">
-          <div className="step-1 active-step">Current step you're on</div>
-          <div className="step-2">Next step</div>
-          <div className="step-2">Next next step</div>
+      <div className="appointment-form-left palette-three">
+        <div className="header-title small-padding">Book an Appointment</div>
+        <div className="header-steps small-padding flex-column">
+          <div className="step-1 header-step-title active-step-title">Current step you're on</div>
+          <div className="step-2 header-step-title">Next step</div>
+          <div className="step-2 header-step-title">Next next step</div>
         </div>
       </div>
 
-      <div className="appointment-form-right">
-        <div className="appointment-form-right-main">
+      <div className="appointment-form-right palette-two">
+        <div className="appointment-form-right-main small-padding">
         {wizardIndex === 0 && (
           <ServicesContainer
             handleNextIndex={handleNextIndex}
@@ -38,8 +38,8 @@ const AppointmentFormView = props => {
         )}
         </div>
 
-        <div className="appointment-form-right-bottom">
-            <div className="appointment-form-right-bottom-description">We are not responsible for loss of hair, bald spots, lack of enthusiasm, general nervousness. Pick your poison.</div>
+        <div className="appointment-form-right-bottom mini-title small-padding">
+            <div className="appointment-form-right-bottom-description content-center">We are not responsible for loss of hair, bald spots, lack of enthusiasm, general nervousness. Pick your poison.</div>
         </div>
 
       </div>
