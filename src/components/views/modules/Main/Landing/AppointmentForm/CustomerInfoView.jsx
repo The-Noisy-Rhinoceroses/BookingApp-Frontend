@@ -9,7 +9,7 @@ const CustomerInfoView = props => {
         <div className="customer-info-view">
             <form onSubmit={handleSubmit}>
 
-                <div className="appointment-form-group-container">
+                <div className="appointment-form-group-container flex-column">
                     <label>First Name</label>
                     <input
                         type="text"
@@ -20,7 +20,7 @@ const CustomerInfoView = props => {
                     />
                 </div>
 
-                <div className="appointment-form-group-container">
+                <div className="appointment-form-group-container flex-column">
                     <label>Last Name</label>
                     <input
                         type="text"
@@ -31,7 +31,7 @@ const CustomerInfoView = props => {
                     />
                 </div>
 
-                <div className="appointment-form-group-container">
+                <div className="appointment-form-group-container flex-column">
                     <label>Phone</label>
                     <input
                         type="tel"
@@ -42,7 +42,7 @@ const CustomerInfoView = props => {
                     />
                 </div>
 
-                <div className="appointment-form-group-container">
+                <div className="appointment-form-group-container flex-column">
                     <label>Email</label>
                     <input
                         type="email"
@@ -53,7 +53,7 @@ const CustomerInfoView = props => {
                     />
                 </div>
 
-                <div className="appointment-form-group-container">
+                <div className="appointment-form-group-container flex-column">
                     <label>Date</label>
                     <DatePicker
                         todayButton="Today"
@@ -73,7 +73,7 @@ const CustomerInfoView = props => {
                     />
                 </div>
 
-                <button className="appointment-button orange-button">Book</button>
+                <button className="appointment-button small-margin orange-button">Book</button>
 
             </form>
         </div>
