@@ -6,10 +6,10 @@ const DashboardView = props => {
   const { appointments } = props;
   
   return (
-    <div className="dashboard-view">
+    <div className="dashboard-view flex-row">
         <DashboardMenuContainer />
-        <WeeklyContainer appointments={appointments} />
         <BarberAppointmentsContainer appointments={appointments} />
+        <WeeklyContainer appointments={appointments} />
     </div>
   )
 };
