@@ -20,12 +20,11 @@ const BarberAppointmentsView = props => {
   }
 
   return (
-      <div style={{height: '100vh'}}>
-        <div>Monthly View</div>
+      <div className="dashboard-monthly-view">
         <BigCalendar
           localizer={localizer}
           startAccessor="start"
-          views={['month', 'agenda']}
+          views={['month']}
           endAccessor="end"
           events={events}
           components={components}
