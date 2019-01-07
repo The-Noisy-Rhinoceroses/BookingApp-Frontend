@@ -24,7 +24,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://localhost:1337",
+  "proxy": "http://localhost:1337",
   "devDependencies": {
     "merge": "^1.2.1"
   }
