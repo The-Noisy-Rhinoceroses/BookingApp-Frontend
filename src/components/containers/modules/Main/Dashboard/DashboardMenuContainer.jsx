@@ -10,14 +10,16 @@ class DashboardMenuContainer extends Component {
       selectedId: this.props.currentUser._id
     }
   }
-  handleChange = (evt) => {
-    this.setState({selectedId: evt.target.value})
-    this.props.fetchCoworkerAppointments(evt.target.value);
+  handleClick = (evt) => {
+    this.setState({selectedId: evt.currentTarget.attributes.getNamedItem('value').value})
+    this.props.fetchCoworkerAppointments(evt.currentTarget.attributes.getNamedItem('value').value);
   }
 
   render() {
+    const activeUser = this.state.selectedId || (this.props.allBarbers && this.props.allBarbers.length && this.props.allBarbers[0]._id);
+
     return (
-      <DashboardMenuView allBarbers={this.props.allBarbers} handleChange={this.handleChange} selectedUser={this.state.selectedId} currentUser={this.props.currentUser} />
+      <DashboardMenuView allBarbers={this.props.allBarbers} handleClick={this.handleClick} selectedUser={activeUser} currentUser={this.props.currentUser} />
     )
   }
 }
