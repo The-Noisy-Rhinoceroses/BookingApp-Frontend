@@ -3,13 +3,13 @@ import { BarberAppointmentsContainer, WeeklyContainer, DashboardMenuContainer } 
 
 
 const DashboardView = props => {
-  const { appointments } = props;
+  const { appointments, handleSelectSlot, startingDates } = props;
   
   return (
     <div className="dashboard-view flex-row">
         <DashboardMenuContainer />
-        <BarberAppointmentsContainer appointments={appointments} />
-        <WeeklyContainer appointments={appointments} />
+        <BarberAppointmentsContainer handleSelectSlot={handleSelectSlot} appointments={appointments} />
+        <WeeklyContainer startingDates={startingDates} appointments={appointments} />
     </div>
   )
 };

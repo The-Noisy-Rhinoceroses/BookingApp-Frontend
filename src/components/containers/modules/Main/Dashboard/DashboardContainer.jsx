@@ -4,16 +4,35 @@ import { fetchCoworkerAppointments } from '../../../../../thunks';
 import { DashboardView } from '../../../../views/modules/Main';
 
 class DashboardContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      weekDate: null,
+      agendaDate: null
+    }
+  }
+
   componentDidMount() {
     this.props.listAppointments(this.props.currentBarber._id);
   }
 
+  handleSelectSlot = (date) => {
+    let selectedDates = {
+      weekDate: date,
+      agendaDate: date
+    };
+
+    this.setState(selectedDates);
+  }
+
   render() {
+
     return (
       <DashboardView
         appointments={this.props.appointments}
-        handleChange={this.handleChange}
         allBarbers={this.props.allBarbers}
+        handleSelectSlot={this.handleSelectSlot}
+        startingDates = {this.state}
       />
     );
   }

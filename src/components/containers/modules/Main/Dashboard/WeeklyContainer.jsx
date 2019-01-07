@@ -4,10 +4,10 @@ import { WeeklyView } from '../../../../views/modules/Main';
 class WeeklyContainer extends Component {
 
   render() {
-    const { appointments } = this.props;
+    const { appointments, startingDates } = this.props;
 
     return (
-        <WeeklyView appointments={appointments} />
+        <WeeklyView startingDates={startingDates} appointments={appointments} />
     )
   }
 }

@@ -5,6 +5,7 @@ import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-cale
 import { Month } from '../../../../widgets';
 
 const BarberAppointmentsView = props => {
+  const { handleSelectSlot } = props;
   const localizer = momentLocalizer(moment);
 
   const events = props.appointments.map(appointment => ({
@@ -22,6 +23,7 @@ const BarberAppointmentsView = props => {
   return (
       <div className="dashboard-monthly-view">
         <BigCalendar
+          onDrillDown={handleSelectSlot}
           localizer={localizer}
           startAccessor="start"
           views={['month']}

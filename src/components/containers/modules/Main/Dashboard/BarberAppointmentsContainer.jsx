@@ -4,9 +4,9 @@ import { BarberAppointmentsView } from '../../../../views/modules/Main';
 class BarberAppointmentsContainer extends Component {
 
   render() {
-    const { appointments } = this.props;
+    const { appointments, handleSelectSlot } = this.props;
     return (
-        <BarberAppointmentsView appointments={appointments} />
+        <BarberAppointmentsView handleSelectSlot={handleSelectSlot} appointments={appointments} />
     )
   }
 }

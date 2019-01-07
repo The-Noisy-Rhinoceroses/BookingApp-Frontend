@@ -6,6 +6,7 @@ import { Month } from '../../../../widgets';
 
 const WeeklyView = props => {
   const localizer = momentLocalizer(moment);
+  const { weekDate } = props.startingDates;
 
   const events = props.appointments.map(appointment => ({
     title: `${appointment.customer.firstName} ${appointment.customer.lastName} | ${appointment.customer.phoneNumber} | ${appointment.customer.email}`,
@@ -29,6 +30,7 @@ const WeeklyView = props => {
   return (
       <div className="dashboard-weekly-view">
         <BigCalendar
+          date={weekDate}
           localizer={localizer}
           startAccessor="start"
           defaultView={BigCalendar.Views.WEEK}
