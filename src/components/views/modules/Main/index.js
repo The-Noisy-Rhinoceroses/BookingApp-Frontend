@@ -4,7 +4,7 @@
 export { default as DashboardView } from './Dashboard/DashboardView';
 export { default as DashboardMenuView } from './Dashboard/DashboardMenuView';
 export { default as WeeklyView } from './Dashboard/WeeklyView';
-export { default as BarberAppointmentsView } from './Dashboard/BarberAppointmentsView';
+export { default as MonthlyView } from './Dashboard/MonthlyView';
 
 // #endregion
 

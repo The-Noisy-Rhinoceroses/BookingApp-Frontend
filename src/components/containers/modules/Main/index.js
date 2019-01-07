@@ -4,7 +4,7 @@
 export { default as DashboardContainer } from './Dashboard/DashboardContainer';
 export { default as DashboardMenuContainer } from './Dashboard/DashboardMenuContainer';
 export { default as WeeklyContainer } from './Dashboard/WeeklyContainer';
-export { default as BarberAppointmentsContainer } from './Dashboard/BarberAppointmentsContainer';
+export { default as MonthlyContainer } from './Dashboard/MonthlyContainer';
 
 // #endregion
 

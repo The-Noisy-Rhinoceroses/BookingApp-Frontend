@@ -4,8 +4,9 @@ import BigCalendar, { momentLocalizer } from 'react-big-calendar';
 import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import { Month } from '../../../../widgets';
 
-const BarberAppointmentsView = props => {
+const MonthlyView = props => {
   const { handleSelectSlot } = props;
+
   const localizer = momentLocalizer(moment);
 
   const events = props.appointments.map(appointment => ({
@@ -36,4 +37,4 @@ const BarberAppointmentsView = props => {
   );
 };
 
-export default BarberAppointmentsView;
+export default MonthlyView;
