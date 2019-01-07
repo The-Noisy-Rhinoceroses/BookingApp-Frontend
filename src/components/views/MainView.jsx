@@ -4,7 +4,7 @@ import RoutesContainer from '../containers/RoutesContainer';
 
 const MainView = props => {
   return (
-    <div className="section-main">
+    <div className="section-main flex-row">
       <RoutesContainer />
     </div>
   )
