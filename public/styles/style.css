@@ -116,6 +116,14 @@ label {
     padding: 10px 0px;
 }
 
+.App {
+    height: 100vh;
+}
+
+.landing-view {
+    flex: auto;
+}
+
 
 /* #endregion ------ Global --------- */
 
@@ -369,7 +377,122 @@ label {
 
 
 /* #region --------- Dashboard --------- */
+.dashboard-barber-grid {
+    color: #fff;
+    height: 100%;
+}
 
+.dashboard-view {
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex: auto;
+}
+
+.dashboard-barber-container {
+    cursor: pointer;
+    width: calc(100% - 40px);
+}
+
+.dashboard-barber-photo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    flex: 100%;
+    width: 100%;
+    height: 70px;
+}
+
+.dashboard-barber-icon {
+    font-size: 50px;
+}
+
+.dashboard-menu {
+    background: linear-gradient(to bottom, #00a1ff, #77d4d8);
+    flex: 7%
+}
+
+.dashboard-barber-container.active {
+    background-color: #ffffff30;
+}
+
+.dashboard-barber-container:hover {
+    background-color: #ffffff17;
+}
+
+.dashboard-barber-info {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.dashboard-monthly-view {
+    flex: 23%;
+    background: #365c7d;
+}
+
+.dashboard-weekly-view {
+    flex: 70%;
+}
+
+.dashboard-monthly-view .rbc-calendar {
+    height: 46vh;
+    min-height: 437px;
+    padding: 40px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.dashboard-monthly-view .rbc-toolbar-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+.dashboard-monthly-view .rbc-toolbar button {
+    border: none !important;
+    color: #fff;
+}
+
+.dashboard-monthly-view .rbc-day-bg + .rbc-day-bg,
+.dashboard-monthly-view .rbc-month-row + .rbc-month-row,
+.dashboard-monthly-view .rbc-header,
+.dashboard-monthly-view .rbc-month-view {
+    border: none !important;
+}
+
+.dashboard-monthly-view .rbc-off-range-bg {
+    background: transparent;
+}
+
+.dashboard-monthly-view .rbc-date-cell {
+    text-align: center;
+    padding: 0;
+}
+
+.dashboard-monthly-view .rbc-today {
+    background: transparent;
+}
+
+.dashboard-monthly-view .rbc-current > a {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 6px;
+}
+
+.dashboard-monthly-view .rbc-month-header {
+    margin: 40px 0px;
+}
+
+.dashboard-monthly-view .rbc-off-range,
+.dashboard-monthly-view .rbc-header {
+    color: #ffffff4a;
+}
+
+.dashboard-weekly-view .rbc-calendar {
+    height: 50vh;
+    min-height: 437px;
+}
 
 
 /* #endregion --------- Dashboard --------- */
