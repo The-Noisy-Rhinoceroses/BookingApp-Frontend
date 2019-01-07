@@ -27,12 +27,12 @@ const WeeklyView = props => {
   // }
 
   return (
-      <div>
-        <div>Weekly View</div>
+      <div className="dashboard-weekly-view">
         <BigCalendar
           localizer={localizer}
           startAccessor="start"
-          views={['month', 'agenda']}
+          defaultView={BigCalendar.Views.WEEK}
+          views={["week"]}
           endAccessor="end"
           events={events}
           components={components}
