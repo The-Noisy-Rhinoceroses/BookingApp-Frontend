@@ -3,6 +3,7 @@
 // #region --------------- Dashboard Exports ---------------
 export { default as DashboardContainer } from './Dashboard/DashboardContainer';
 export { default as DashboardMenuContainer } from './Dashboard/DashboardMenuContainer';
+export { default as AgendaContainer } from './Dashboard/AgendaContainer';
 export { default as WeeklyContainer } from './Dashboard/WeeklyContainer';
 export { default as MonthlyContainer } from './Dashboard/MonthlyContainer';
 

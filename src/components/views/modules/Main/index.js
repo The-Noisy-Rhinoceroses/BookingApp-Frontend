@@ -3,6 +3,7 @@
 // #region --------------- Dashboard Exports ---------------
 export { default as DashboardView } from './Dashboard/DashboardView';
 export { default as DashboardMenuView } from './Dashboard/DashboardMenuView';
+export { default as AgendaView } from './Dashboard/AgendaView';
 export { default as WeeklyView } from './Dashboard/WeeklyView';
 export { default as MonthlyView } from './Dashboard/MonthlyView';
 

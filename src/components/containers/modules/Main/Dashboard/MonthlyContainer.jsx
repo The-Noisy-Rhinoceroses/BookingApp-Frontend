@@ -4,9 +4,9 @@ import { MonthlyView } from '../../../../views/modules/Main';
 class MonthlyContainer extends Component {
 
   render() {
-    const { appointments, handleSelectSlot } = this.props;
+    const { appointments, handleSelectSlot, startingDates } = this.props;
     return (
-        <MonthlyView handleSelectSlot={handleSelectSlot} appointments={appointments} />
+        <MonthlyView startingDates={startingDates} handleSelectSlot={handleSelectSlot} appointments={appointments} />
     )
   }
 }

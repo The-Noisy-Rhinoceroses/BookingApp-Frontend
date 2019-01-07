@@ -4,9 +4,9 @@ import BigCalendar, { momentLocalizer } from 'react-big-calendar';
 import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import { Month } from '../../../../widgets';
 
-const WeeklyView = props => {
+const AgendaView = props => {
   const localizer = momentLocalizer(moment);
-  const { weekDate } = props.startingDates;
+  const { agendaDate } = props.startingDates;
 
   const events = props.appointments.map(appointment => ({
     title: `${appointment.customer.firstName} ${appointment.customer.lastName} | ${appointment.customer.phoneNumber} | ${appointment.customer.email}`,
@@ -22,20 +22,20 @@ const WeeklyView = props => {
 
   //To Do: Fix Back and Next buttons
   return (
-      <div className="dashboard-weekly-view">
+      <div className="dashboard-agenda-view">
         <BigCalendar
-          date={weekDate}
+          date={agendaDate}
           localizer={localizer}
           startAccessor="start"
-          defaultView={BigCalendar.Views.WEEK}
-          views={["week"]}
+          defaultView={BigCalendar.Views.AGENDA}
+          views={["agenda"]}
           endAccessor="end"
           events={events}
           components={components}
-          popup
+          toolbar={false}
         />
       </div>
   );
 };
 
-export default WeeklyView;
+export default AgendaView;

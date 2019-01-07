@@ -3,9 +3,10 @@ import moment from 'moment';
 import BigCalendar, { momentLocalizer } from 'react-big-calendar';
 import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import { Month } from '../../../../widgets';
+import { AgendaContainer } from '../../../../containers/modules/Main';
 
 const MonthlyView = props => {
-  const { handleSelectSlot } = props;
+  const { handleSelectSlot, startingDates } = props;
 
   const localizer = momentLocalizer(moment);
 
@@ -31,8 +32,9 @@ const MonthlyView = props => {
           endAccessor="end"
           events={events}
           components={components}
-          popup
         />
+
+        <AgendaContainer appointments={props.appointments} startingDates={startingDates} />
       </div>
   );
 };
