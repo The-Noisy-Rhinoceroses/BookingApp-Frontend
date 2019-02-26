@@ -4,7 +4,6 @@ import BigCalendar, { momentLocalizer } from 'react-big-calendar';
 import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import { WeekEvent } from '../../../../widgets';
 import { WeekHeader } from '../../../../widgets';
-// import { WeekTimeSlotWrapper } from '../../../../widgets';
 
 const WeeklyView = props => {
   const localizer = momentLocalizer(moment);
@@ -19,8 +18,7 @@ const WeeklyView = props => {
   let components = {
     week: {
       header: WeekHeader,
-      event: WeekEvent,
-      // timeSlotWrapper: WeekTimeSlotWrapper
+      event: WeekEvent
     }
   }
 
