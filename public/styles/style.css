@@ -490,8 +490,41 @@ label {
 }
 
 .dashboard-weekly-view .rbc-calendar {
-    height: 50vh;
     min-height: 437px;
+}
+
+.dashboard-weekly-view .rbc-header,
+.dashboard-weekly-view .rbc-time-content,
+.dashboard-weekly-view .rbc-timeslot-group {
+    border: none;
+}
+
+.dashboard-weekly-view .rbc-time-slot {
+    border: none !important;
+}
+
+.dashboard-weekly-view .column-day,
+.dashboard-weekly-view .column-week {
+    margin: 20px 0 10px 0;
+}
+
+.dashboard-weekly-view .rbc-event-label,
+.dashboard-weekly-view .rbc-time-gutter.rbc-time-column,
+.dashboard-weekly-view .rbc-label.rbc-time-header-gutter,
+.dashboard-weekly-view .rbc-allday-cell,
+.dashboard-weekly-view .rbc-current-time-indicator {
+    display: none;
+}
+
+.dashboard-weekly-view .rbc-event {
+    position: relative !important;
+    top: unset !important;
+    height: auto !important;
+    left: unset !important;
+    width: auto !important;
+    background-color: transparent;
+    color: #000;
+    border: none !important;
 }
 
 

@@ -2,8 +2,9 @@ import React from 'react';
 import moment from 'moment';
 import BigCalendar, { momentLocalizer } from 'react-big-calendar';
 import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
-import { Month } from '../../../../widgets';
+import { WeekEvent } from '../../../../widgets';
 import { WeekHeader } from '../../../../widgets';
+// import { WeekTimeSlotWrapper } from '../../../../widgets';
 
 const WeeklyView = props => {
   const localizer = momentLocalizer(moment);
@@ -16,11 +17,10 @@ const WeeklyView = props => {
   }));
 
   let components = {
-    month: {
-      event: Month
-    },
     week: {
-      header: WeekHeader
+      header: WeekHeader,
+      event: WeekEvent,
+      // timeSlotWrapper: WeekTimeSlotWrapper
     }
   }
 
@@ -29,6 +29,7 @@ const WeeklyView = props => {
       <div className="dashboard-weekly-view">
         <BigCalendar
           date={weekDate}
+          header={WeekHeader}
           localizer={localizer}
           startAccessor="start"
           defaultView={BigCalendar.Views.WEEK}
@@ -36,6 +37,7 @@ const WeeklyView = props => {
           endAccessor="end"
           events={events}
           components={components}
+          step={720}
           popup
         />
       </div>
