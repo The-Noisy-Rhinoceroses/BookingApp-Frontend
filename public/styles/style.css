@@ -3,6 +3,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700');
 
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+
 @font-face {
     font-family: "TeachableSans-Regular";
     src: url("/fonts/TeachableSans-Regular.ttf") format("ttf"),
@@ -122,6 +124,16 @@ label {
 
 .landing-view {
     flex: auto;
+}
+
+.hover-light:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+    transition: ease-in-out .2s;
+}
+
+.hover-dark:hover {
+    box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+    transition: ease-in-out .2s;
 }
 
 
@@ -407,16 +419,12 @@ label {
 }
 
 .dashboard-menu {
-    background: linear-gradient(to bottom, #00a1ff, #77d4d8);
+    background: linear-gradient(to bottom, #3090e8, #2fbcd2);
     flex: 7%
 }
 
 .dashboard-barber-container.active {
     background-color: #ffffff30;
-}
-
-.dashboard-barber-container:hover {
-    background-color: #ffffff17;
 }
 
 .dashboard-barber-info {
@@ -428,7 +436,7 @@ label {
 
 .dashboard-monthly-view {
     flex: 23%;
-    background: #365c7d;
+    background: linear-gradient(to bottom, #365c7d, #406475);
 }
 
 .dashboard-weekly-view {
@@ -489,6 +497,10 @@ label {
     color: #ffffff4a;
 }
 
+.dashboard-monthly-view .rbc-event {
+    display: none;
+}
+
 .dashboard-weekly-view .rbc-calendar {
     min-height: 437px;
 }
@@ -527,6 +539,11 @@ label {
 .dashboard-weekly-view .rbc-header,
 .dashboard-weekly-view .rbc-day-slot {
     background-color: #fcfdff;
+}
+
+.dashboard-weekly-view .rbc-header:last-child,
+.dashboard-weekly-view .rbc-day-slot:last-child {
+    background-color: rgb(238, 241, 242);
 }
 
 .dashboard-weekly-view .rbc-today {
@@ -589,6 +606,10 @@ label {
     display: none;
 }
 
+.dashboard-weekly-view .rbc-events-container {
+    margin: 0 !important;
+}
+
 .dashboard-weekly-view .rbc-event {
     position: relative !important;
     top: unset !important;
@@ -598,8 +619,83 @@ label {
     background-color: transparent;
     color: #000;
     border: none !important;
+    padding: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    border-radius: 0;
 }
 
+.dashboard-weekly-view .rbc-event:hover {
+    box-shadow: inset 0 0 100px 100px rgba(184, 194, 204, 0.1);
+    transition: ease-in-out .2s;
+}
+
+.dashboard-weekly-view .rbc-event::after {
+    content: '';
+    border-bottom: 3px solid rgb(10, 194, 255);
+    display: block;
+    width: 59%;
+}
+
+.dashboard-weekly-view .rbc-event-content {
+    margin-bottom: 10px;
+}
+
+.dashboard-weekly-view .week-appointment-inline {
+    display: inline-block;
+}
+
+.dashboard-weekly-view .week-appointment-time  {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.dashboard-weekly-view .week-appointment-name-first {
+    margin-bottom: 2px;
+}
+
+.dashboard-agenda-view .dashboard-agenda-view-title {
+    padding: 0 40px;
+    color: rgb(142, 163, 184);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.dashboard-agenda-view .rbc-agenda-view > .rbc-agenda-table,
+.dashboard-agenda-view .rbc-agenda-date-cell,
+.dashboard-agenda-view .rbc-agenda-time-cell {
+    display: none;
+}
+
+.dashboard-agenda-view .rbc-agenda-table,
+.dashboard-agenda-view .rbc-agenda-event-cell {
+    border: none !important;
+    border-collapse: unset !important;
+}
+
+.dashboard-agenda-view .rbc-calendar {
+    padding: 30px 40px;
+}
+
+.dashboard-agenda-view .rbc-agenda-event-cell {
+    padding: 0 !important;
+}
+
+.dashboard-agenda-view .week-appointment-name {
+    font-weight: 100;
+    letter-spacing: 1px;
+    word-spacing: 0px;
+    color: #efefef;
+    margin-bottom: 20px;
+}
+
+/* TEMPORARY | Make modal popover with this content */
+.dashboard-weekly-view .week-appointment-contact,
+.dashboard-agenda-view .week-appointment-contact {
+    display: none;
+}
 
 /* #endregion --------- Dashboard --------- */
 

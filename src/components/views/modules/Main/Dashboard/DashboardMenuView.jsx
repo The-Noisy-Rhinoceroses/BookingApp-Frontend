@@ -14,7 +14,7 @@ const DashboardMenuView = props => {
             // }
 
             return (
-              <div key={barber._id} onClick={(event) => handleClick(event)} value={barber._id} className={`dashboard-barber-container flex-column flex-center small-padding ${active}`}>
+              <div key={barber._id} onClick={(event) => handleClick(event)} value={barber._id} className={`dashboard-barber-container hover-light flex-column flex-center small-padding ${active}`}>
                 {/* <div style={bgImage} className="dashboard-barber-photo"></div> */}
                 <i className="dashboard-barber-icon far fa-address-card"></i>
                 <div className="dashboard-barber-info flex-column flex-center mini-margin">

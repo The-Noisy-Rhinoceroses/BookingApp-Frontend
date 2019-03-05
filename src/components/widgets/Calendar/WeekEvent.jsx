@@ -11,16 +11,23 @@ const WeekEvent = (props) => {
 
   return (
     <div className="week-appointment-container flex-column">
-      <div className="week-appointment-time">{formattedTimeSlot}</div>
+      <div className="week-appointment-inline-container">
+        <div className="week-appointment-time week-appointment-inline">{formattedTimeSlot}</div>
+      </div>
 
       <div className="week-appointment-name flex-column">
-        <div className="week-appointment-name-first">{firstName}</div>
-        <div className="week-appointment-name-last">{lastName}</div>
+        <div className="week-appointment-inline-container">
+          <div className="week-appointment-name-first week-appointment-inline">{firstName}</div>
+        </div>
+        
+        <div className="week-appointment-inline-container">
+          <div className="week-appointment-name-last week-appointment-inline">{lastName}</div>
+        </div>
       </div>
 
       <div className="week-appointment-contact flex-column">
-        <div className="week-appointment-name-phone"><span className="week-contact-phone">Phone: </span>{phone}</div>
-        <div className="week-appointment-name-email"><span className="week-contact-email">Email: </span>{email}</div>
+        <div className="week-appointment-name-phone week-appointment-inline"><span className="week-contact-phone">Phone: </span>{phone}</div>
+        <div className="week-appointment-name-email week-appointment-inline"><span className="week-contact-email">Email: </span>{email}</div>
       </div>
     </div>
   )
