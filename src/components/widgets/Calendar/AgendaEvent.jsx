@@ -7,11 +7,12 @@ const AgendaEvent = (props) => {
   const phone = props.event.title.split('|')[1];
   const email = props.event.title.split('|')[2];
 
-  console.log(customerName)
-
   return (
     <div className="week-appointment-container flex-column">
-      <div className="week-appointment-name">{customerName}</div>
+      <div className="week-appointment-title-container flex-row">
+        <div className="week-appointment-bullet"></div>
+        <div className="week-appointment-name">{customerName}</div>
+      </div>
 
       <div className="week-appointment-contact flex-column">
         <div className="week-appointment-time week-appointment-inline">{formattedTimeSlot}</div>
