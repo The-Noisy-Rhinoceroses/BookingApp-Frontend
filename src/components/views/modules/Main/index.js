@@ -6,6 +6,7 @@ export { default as DashboardMenuView } from './Dashboard/DashboardMenuView';
 export { default as AgendaView } from './Dashboard/AgendaView';
 export { default as WeeklyView } from './Dashboard/WeeklyView';
 export { default as MonthlyView } from './Dashboard/MonthlyView';
+export { default as LineGraphView } from './Dashboard/LineGraphView';
 
 // #endregion
 

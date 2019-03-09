@@ -660,6 +660,11 @@ label {
     margin-bottom: 2px;
 }
 
+.dashboard-line-graph-view {
+    position: absolute;
+    bottom: 0;
+}
+
 .dashboard-agenda-view .dashboard-agenda-view-title {
     padding: 0 40px;
     color: rgb(142, 163, 184);

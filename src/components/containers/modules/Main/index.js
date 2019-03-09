@@ -6,6 +6,7 @@ export { default as DashboardMenuContainer } from './Dashboard/DashboardMenuCont
 export { default as AgendaContainer } from './Dashboard/AgendaContainer';
 export { default as WeeklyContainer } from './Dashboard/WeeklyContainer';
 export { default as MonthlyContainer } from './Dashboard/MonthlyContainer';
+export { default as LineGraphContainer } from './Dashboard/LineGraphContainer';
 
 // #endregion
 

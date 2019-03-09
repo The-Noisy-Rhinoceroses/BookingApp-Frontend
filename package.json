@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "d3": "^5.9.1",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",

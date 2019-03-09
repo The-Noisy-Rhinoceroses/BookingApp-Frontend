@@ -4,6 +4,7 @@ import BigCalendar, { momentLocalizer } from 'react-big-calendar';
 import '../../../../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import { WeekEvent } from '../../../../widgets';
 import { WeekHeader } from '../../../../widgets';
+import LineGraphContainer from '../../../../containers/modules/Main/Dashboard/LineGraphContainer';
 
 const WeeklyView = props => {
   const localizer = momentLocalizer(moment);
@@ -38,6 +39,7 @@ const WeeklyView = props => {
           step={720}
           popup
         />
+        <LineGraphContainer />
       </div>
   );
 };
